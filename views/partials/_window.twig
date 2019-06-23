@@ -1,0 +1,17 @@
+<div id="{{title}}-window" class="window-wrapper closed">
+    <div class="draggable">
+        <div class="window-top-bar"></div>
+        <div class="window-header">
+            <a href="#" class="traffic-lights">
+                <div class="traffic-light traffic-light-red"></div>
+                <div class="traffic-light traffic-light-yellow"></div>
+                <div class="traffic-light traffic-light-green"></div>
+            </a>
+            <h2 class="window-title">{{title}}</h2>
+        </div>
+    </div>
+    {% block content %}
+    {# window content goes here #}
+    {% endblock %}
+    {# <div class="window-bottom-bar"></div> #}
+</div>

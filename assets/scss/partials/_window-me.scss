@@ -1,0 +1,110 @@
+#me-window {
+
+    .window-top-bar {
+        background-color: var(--meColor);
+    }
+
+    .window-header {
+        background-color: var(--lightMeColor);
+    }
+}
+
+
+.me-image {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: .75rem;
+}
+
+.icons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons-wrapper {
+    display: flex;
+}
+
+.social-icon {
+    display: flex;
+
+    &+.social-icon {
+        margin-left: 1rem;
+    }
+
+    & svg {
+        width: 1.125rem;
+    }
+
+
+    &:focus {
+        outline: -webkit-focus-ring-color auto 5px;
+    }
+
+    & svg {
+        fill: var(--mainTextColor);
+    }
+}
+
+.instagram-heart-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes instagram-heart-animation {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(.95);
+    }
+}
+
+.instagram-heart-icon {
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    transform: scale(1);
+
+    &:focus {
+        outline: auto 5px -webkit-focus-ring-color;
+    }
+
+
+    & svg {
+        stroke: var(--mainTextColor);
+
+        &.liked {
+            stroke: var(--meColor);
+            fill: var(--meColor);
+        }
+
+        &.animating {
+            animation: instagram-heart-animation .45s ease-in-out;
+
+        }
+    }
+
+
+}
+
+.disabled .instagram-heart-icon {
+    pointer-events: none;
+}
+
+.instagram-heart-amount {
+    margin-left: .5rem;
+    @extend %mono;
+    text-transform: lowercase;
+    @extend %small-text;
+}

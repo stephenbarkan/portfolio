@@ -1,0 +1,145 @@
+#work-window {
+    .window-top-bar {
+        background-color: var(--workColor);
+    }
+
+    .window-header {
+        background-color: var(--lightWorkColor);
+    }
+
+    .window-padding {
+        padding: 1.25rem .75rem;
+    }
+}
+
+.work-preview-wrapper {
+    padding: 1.5rem .75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: $border-small;
+    transition: $timing-short;
+    text-decoration: none;
+    color: var(--mainTextColor);
+
+    &:last-child {
+        border-bottom: unset;
+    }
+
+    & svg {
+        transition: $timing-short;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: var(--lightGrey);
+
+        & svg {
+            transform: translateX(.25rem);
+        }
+    }
+}
+
+.disabled .work-preview-wrapper {
+    pointer-events: none;
+}
+
+.coming-soon {
+    position: relative;
+    --coming-soon-text: 'Coming Soon';
+
+    &::after {
+        opacity: 0;
+        transition: $timing-short;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        white-space: nowrap;
+        content: var(--coming-soon-text);
+        background: var(--mainTextColor);
+        color: var(--mainBackgroundColor);
+        padding: .5rem 1rem;
+        @extend %mono;
+    }
+
+    &:nth-of-type(2n)::after {
+        transform: translate(-50%, -50%) rotate(-10deg);
+    }
+
+    &:nth-of-type(2n-1)::after {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        & svg {
+            transform: translateX(0rem);
+        }
+
+        background-color: var(--windowBackgroundColor);
+        cursor: not-allowed;
+    }
+}
+
+.work-preview-index {
+    font-size: 1.5rem;
+}
+
+.work-preview-text {
+    flex: 1;
+}
+
+.work-preview-wrapper {
+    .single-services {
+        width: 100%;
+        max-width: 405px;
+        margin: 0;
+        margin-top: .5rem;
+        @extend %small-text;
+        padding: 0;
+        list-style-type: none;
+        display: none;
+        text-transform: lowercase;
+        @extend %mono;
+
+        li {
+            color: var(--lightTextColor);
+            display: inline-block;
+
+            &::before {
+                content: '';
+            }
+
+            &+li::before {
+                content: '/ ';
+            }
+        }
+    }
+
+    h3 {
+        @extend %body;
+        font-weight: 500;
+        margin: 0 0 .25rem;
+        width: 100%;
+
+    }
+}
+
+@media #{$breakpoint-more-than-small} {
+    .work-preview-text {
+        // padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .work-preview-wrapper {
+        .single-services {
+            display: block;
+        }
+    }
+}

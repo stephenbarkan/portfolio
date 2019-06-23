@@ -1,0 +1,29 @@
+@import url("//hello.myfonts.net/count/38f441");
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,500');
+
+@font-face {
+    font-family: 'ClearfaceStd-Regular';
+    src: url('webfonts/38F441_0_0.eot');
+    src: url('webfonts/38F441_0_0.eot?#iefix') format('embedded-opentype'), url('webfonts/38F441_0_0.woff2') format('woff2'), url('webfonts/38F441_0_0.woff') format('woff'), url('webfonts/38F441_0_0.ttf') format('truetype');
+}
+
+
+%clearface {
+    font-family: 'ClearfaceStd-Regular', serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.25;
+}
+
+%body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+%mono {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+b,
+strong {
+    font-weight: 500;
+}

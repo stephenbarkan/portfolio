@@ -1,0 +1,154 @@
+.window-wrapper {
+    height: auto;
+    width: calc(100% - .5rem);
+    max-height: calc(100% - .5rem);
+    overflow: hidden;
+    left: .25rem;
+    right: .25rem;
+    position: absolute;
+    pointer-events: all;
+    border-radius: 2px;
+    box-shadow: var(--boxShadow);
+    opacity: 1;
+    transition: opacity $timing;
+    z-index: 1;
+
+    &.closed {
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $timing, visibility $timing-short $timing-short;
+    }
+
+    &.disabled {
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, .1);
+    }
+}
+
+.draggable {
+    cursor: move;
+}
+
+.window-top-bar {
+    height: 7px;
+}
+
+.window-content-wrapper {
+    background: var(--windowBackgroundColor);
+    pointer-events: auto;
+    height: calc(100% - 50px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    outline: none;
+}
+
+
+.window-padding {
+    padding: .75rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.window-header {
+    min-height: 43px;
+    padding: .5rem .75rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.window-title {
+    line-height: 1;
+    padding-top: .25rem;
+    text-transform: capitalize;
+    display: none;
+}
+
+.traffic-lights {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    padding: .25rem 0;
+    left: .75rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &:focus::after,
+    &:hover::after {
+        content: url(../img/traffic_lights.svg);
+        position: absolute;
+        top: -1px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.traffic-light {
+    width: .75rem;
+    height: .75rem;
+    border-radius: 50%;
+
+    &+& {
+        margin-left: .5rem;
+    }
+
+    &-red {
+        background-color: var(--meColor);
+    }
+
+    &-yellow {
+        background-color: var(--aboutColor);
+    }
+
+    &-green {
+        background-color: var(--resumeColor);
+    }
+}
+
+.window-wrapper.disabled .traffic-light {
+    background-color: var(--grey);
+}
+
+.window-wrapper.disabled .traffic-lights:hover .traffic-light,
+.window-wrapper.disabled .traffic-lights:focus .traffic-light {
+    &-red {
+        background-color: var(--meColor);
+    }
+
+    &-yellow {
+        background-color: var(--aboutColor);
+    }
+
+    &-green {
+        background-color: var(--resumeColor);
+    }
+}
+
+@media #{$breakpoint-more-than-small} {
+
+    .window-wrapper {
+        max-width: calc(100% - 1rem);
+    }
+
+    .window-top-bar {
+        height: 10px;
+    }
+
+    .window-content-wrapper {
+        height: calc(100% - 70px);
+    }
+
+    .window-header {
+        min-height: 60px;
+    }
+
+    .window-title {
+        display: block;
+    }
+}

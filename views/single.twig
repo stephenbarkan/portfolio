@@ -1,0 +1,16 @@
+<header class="single-header" style="--brand-color: {{post.brand_color}}">
+    <h1 class="single-title">{{post.big_text}}</h1>
+    <div class="single-cta">
+        See the site at <a target="_blank"
+           href="{{post.company_website}}">{{post.company_website|trim('https://www.')}}</a>
+    </div>
+
+    <button id="single-scroll-button" class="single-scroll-button">scroll</button>
+</header>
+<div class="single-container">
+    <div id="single-scroll-target" class="single-content">{{ post.content }}</div>
+</div>
+
+
+
+{# {% endblock %} #}

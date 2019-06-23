@@ -1,0 +1,417 @@
+html[data-theme='dark'] {
+
+    .single-header,
+    .loading {
+        color: var(--mainBackgroundColor);
+        opacity: .9;
+    }
+}
+
+$single-spacing-small: 30vh;
+$single-spacing-medium: 35vh;
+$single-spacing-large: 40vh;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+#project-window {
+    & .window-title {
+        display: none;
+    }
+}
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend %clearface;
+    font-size: 1.5rem;
+    background-color: var(--brand-color);
+
+    span {
+        opacity: 0;
+        animation: loading-fade-in .7s 1s both;
+
+        @keyframes loading-fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@keyframes singleHeader {
+    0% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes singleHeaderContents {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes singleScrollPsuedo {
+    0% {
+        opacity: 0;
+        transform: translateY(-.5rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes singleScrollBounce {
+    0% {
+        transform: translateX(-50%) rotate(90deg) translateX(5px);
+    }
+
+    100% {
+        transform: translateX(-50%) rotate(90deg) translateX(0);
+    }
+}
+
+.single-header {
+    background-color: var(--brand-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: calc(var(--height) - 1.5rem);
+    min-height: 450px;
+    text-align: center;
+    @extend h1;
+    transform-origin: center;
+    animation: singleHeader 1.5s both ease;
+    z-index: 1;
+    position: relative;
+
+    h1 {
+        max-width: calc(15.76 * 1em);
+        margin: auto auto 2rem;
+        padding: 0 1rem;
+        animation: singleHeaderContents 1.5s .75s both;
+
+    }
+
+    .single-cta {
+        animation: singleHeaderContents 1.5s 1s both;
+        @extend %mono;
+        display: block;
+        width: auto;
+        white-space: normal;
+        line-height: 1.7;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        // font-size: .85rem;
+        @extend %small-text;
+
+        a {
+            position: relative;
+            color: inherit;
+            text-decoration: none;
+            cursor: alias;
+            position: relative;
+            transition: opacity $timing-short;
+
+            &:before {
+                position: absolute;
+                bottom: -.125rem;
+                left: 0;
+                right: 0;
+                content: '';
+                border-width: 1px;
+                border-bottom-style: solid;
+                transition: $timing-short;
+            }
+
+            &:hover,
+            &:focus {
+                opacity: .45;
+            }
+        }
+    }
+
+    .single-scroll-button {
+        color: inherit;
+        animation: singleScrollPsuedo 1.5s 1.25s both;
+        @extend %mono;
+        @extend %extra-small-text;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        margin-top: auto;
+        align-self: center;
+
+
+        &::after {
+            content: '';
+            background-image: url(../img/work-arrow.svg);
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            left: 50%;
+            display: block;
+            height: 17px;
+            width: 10px;
+            animation: 0.5s cubic-bezier(0, 0, 0.3, 1) 0s infinite alternate singleScrollBounce;
+        }
+    }
+}
+
+.single-container {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--windowBackgroundColor);
+    position: relative;
+}
+
+
+.single-content {
+    padding: $single-spacing-small 0;
+
+    & h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        max-width: 500px;
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: content-box;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &> :first-child {
+        margin-top: 0;
+    }
+
+    &> :last-child {
+        margin-bottom: 0;
+    }
+
+    h3 {
+        @extend %body;
+        font-weight: 500;
+        margin-top: $single-spacing-small;
+        width: auto;
+    }
+
+    h4 {
+        margin: 1em auto;
+        position: relative;
+        margin-top: $single-spacing-small;
+
+        &::before {
+            content: '- ';
+            margin-left: -1.2ch;
+        }
+    }
+
+    h4+h4 {
+        margin-top: 1em;
+        margin-bottom: $single-spacing-small;
+    }
+
+    figure {
+        margin-bottom: $single-spacing-small;
+        margin-top: $single-spacing-small;
+        padding-left: 0;
+        padding-right: 0;
+
+        img,
+        video,
+        svg {
+            width: 800px;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        figcaption {
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--lightTextColor);
+            width: 800px;
+            max-width: 100%;
+            font-weight: normal;
+            @extend %mono;
+            text-align: left;
+            border-top: 1px solid var(--grey);
+            padding-top: 1rem;
+            line-height: 1.7;
+            @extend %smaller-text;
+            margin-top: 2rem;
+            padding-right: 10vw;
+
+            & a {
+                color: var(--lightTextColor);
+                transition: $timing-short;
+
+                &:hover,
+                &:focus {
+                    color: var(--mainTextColor);
+                }
+            }
+        }
+
+        &.full-width {
+            padding: 0;
+            width: 100%;
+
+            img,
+            video,
+            svg {
+                margin: 0 -.75rem;
+                height: auto;
+                width: calc(100% + 1.5rem);
+                max-width: calc(100% + 1.5rem);
+            }
+
+
+            figcaption {
+                margin-left: 0;
+            }
+        }
+
+        &.large {
+            width: 1000px;
+            max-width: calc(100% - 1.5rem);
+            margin-left: auto;
+            margin-right: auto;
+
+            img,
+            video,
+            svg {
+                margin: 0 auto;
+                height: auto;
+                width: 100%;
+            }
+
+            figcaption {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+
+
+@media #{$breakpoint-more-than-small} {
+    #project-window {
+        & .window-title {
+            display: block;
+        }
+    }
+
+    .single-content {
+
+        & h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            padding-left: .75rem;
+            padding-right: .75rem;
+        }
+
+        h3 {
+            margin-top: $single-spacing-medium;
+        }
+
+        h4 {
+            margin-top: $single-spacing-medium;
+        }
+
+        h4+h4 {
+            margin-top: 1em;
+            margin-bottom: $single-spacing-medium;
+        }
+
+        figure {
+            margin-top: $single-spacing-medium;
+            margin-bottom: $single-spacing-medium;
+            padding-left: .75rem;
+            padding-right: .75rem;
+        }
+    }
+
+}
+
+
+@media #{$breakpoint-more-than-medium} {
+
+    .single-content {
+
+        & h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        h3 {
+            margin-top: $single-spacing-large;
+        }
+
+        h4 {
+            margin-top: $single-spacing-large;
+        }
+
+        h4+h4 {
+            margin-top: 1em;
+            margin-bottom: $single-spacing-large;
+        }
+
+        figure {
+            margin-top: $single-spacing-large;
+            margin-bottom: $single-spacing-large;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+    }
+}

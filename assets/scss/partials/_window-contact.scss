@@ -1,0 +1,178 @@
+#contact-window {
+
+    .window-top-bar {
+        background-color: var(--contactColor);
+    }
+
+    .window-header {
+        background-color: var(--lightContactColor);
+    }
+}
+
+
+.wpcf7-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.wpcf7 p+p {
+    margin-top: .75em;
+}
+
+.wpcf7 p:last-of-type {
+    line-height: 0;
+    position: relative;
+    align-self: center;
+
+    & input {
+        border-bottom: none;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../img/send.svg);
+        width: 22px;
+        height: 22px;
+        transition: inherit;
+        background-size: cover;
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -55%);
+        transition: $timing;
+        pointer-events: none;
+    }
+
+    &:hover .wpcf7-submit {
+        background-color: var(--midContactColor);
+    }
+
+    &:hover::after,
+    &:focus-within::after {
+        transform: translate(-30%, -60%);
+    }
+
+}
+
+.disabled .wpcf7 p:last-of-type {
+    pointer-events: none;
+}
+
+.wpcf7-form-control {
+    width: 100%;
+    transition: $timing-short;
+    border: none;
+    @extend %body;
+    border-radius: 0 !important;
+    border-bottom: 1px solid var(--midGrey);
+    padding: .5rem 0 .25rem 0;
+    background: transparent;
+
+    &:hover {
+        border-color: var(--grey);
+        color: var(--darkGrey);
+        outline: none;
+    }
+
+    &:focus {
+        border-bottom: 1px solid var(--mainTextColor);
+        outline: none;
+    }
+
+
+}
+
+
+.wpcf7-submit {
+    @extend .button;
+    background-color: var(--contactColor);
+    width: 10rem;
+    font-size: 0;
+    position: relative;
+    border-radius: 0 !important;
+
+    &:focus {
+        background-color: var(--midContactColor);
+    }
+
+}
+
+form label {
+    @extend %small-text;
+    @extend %mono;
+}
+
+input,
+textarea,
+span.wpcf7-not-valid-tip {
+    @extend %body;
+    padding: .5rem;
+    resize: none;
+}
+
+input:-internal-autofill-selected {
+    background-color: var(--lightGrey) !important;
+    background-image: none !important;
+    color: var(--mainTextColor) !important;
+}
+
+.wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors {
+    display: none !important;
+}
+
+span.wpcf7-form-control-wrap {
+    display: block;
+    position: relative;
+    margin-bottom: .5rem;
+}
+
+span.wpcf7-not-valid-tip {
+    position: absolute;
+    display: block;
+    top: -41px;
+    right: 0;
+    padding-right: 0;
+    font-size: .7rem;
+    top: 4px;
+    @extend %mono;
+}
+
+p:nth-child(4) span.wpcf7-not-valid-tip {
+    top: 66px;
+}
+
+div.wpcf7 span.ajax-loader {
+    display: none;
+}
+
+
+div.wpcf7-response-output {
+    margin: 0;
+    padding: 1rem;
+    border: 2px solid var(--meColor);
+    text-align: center;
+    width: 305px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+@keyframes mail-sent-fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+div.wpcf7-mail-sent-ok {
+    border: 2px solid var(--resumeColor);
+    background-color: var(--windowBackgroundColor);
+    animation: mail-sent-fadeout 1s 2s forwards;
+}

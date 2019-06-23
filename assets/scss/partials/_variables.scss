@@ -1,0 +1,56 @@
+//rfs customizations
+$rfs-base-font-size: .85rem;
+$rfs-breakpoint: 1700px;
+$rfs-factor: 8;
+
+//typography
+$letter-spacing-1: .035em;
+$line-height-copy: 2;
+$measure: 30em;
+
+$spacing-none: 0;
+$spacing-extra-small: .25rem;
+$spacing-small: .5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
+$spacing-extra-large: 4rem;
+$spacing-extra-extra-large: 8rem;
+$spacing-extra-extra-extra-large: 16rem;
+$spacing-copy-separator: 1.5em;
+
+//breakpoints
+//between 500px and 1000px
+$breakpoint-medium: 'screen and (min-width: 500px) and (max-width: 1100px)';
+//between 1000px and 1600px
+$breakpoint-large: 'screen and (min-width: 1100px) and (max-width: 1700px)';
+
+//more than 500px
+$breakpoint-more-than-small: 'screen and (min-width: 500px)';
+//more than 1000px
+$breakpoint-more-than-medium: 'screen and (min-width: 1100px)';
+//more than 1600px
+$breakpoint-more-than-large: 'screen and (min-width: 1700px)';
+
+//transitions
+$timing: .15s;
+$timing-short: $timing/2;
+$timing-medium: $timing*1.5;
+$timing-long: $timing*2;
+
+$border-small: 1px solid var(--lightGrey);
+// var(--boxShadow): 0 15px 50px rgba(50, 50, 93, .1),
+// 0 5px 35px rgba(0, 0, 0, .07);
+// var(--boxShadow)-small: 0 10px 35px rgba(50, 50, 93, .02),
+// 0 3px 15px rgba(0, 0, 0, .0125);
+
+html {
+    --boxShadow: 0 15px 50px rgba(50, 50, 93, .1),
+        0 5px 35px rgba(0, 0, 0, .07);
+    --boxShadowSmall: 0 10px 35px rgba(50, 50, 93, .02),
+        0 3px 15px rgba(0, 0, 0, .0125);
+
+    [data-theme="dark"] {
+        --boxShadow: 0 15px 50px rgba(50, 50, 93, 1), 0 5px 35px rgba(0, 0, 0, 1);
+        --boxShadowSmall: 0 10px 35px rgba(50, 50, 93, .5), 0 3px 15px rgba(0, 0, 0, .5);
+    }
+}

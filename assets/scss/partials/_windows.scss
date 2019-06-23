@@ -1,0 +1,115 @@
+@media screen and (max-width: 500px) {
+    .window-wrapper {
+        left: calc(50% - (.5 * var(--width))) !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+    }
+}
+
+#resume-window {
+    max-width: 470px;
+    height: auto;
+}
+
+#me-window {
+    max-width: 400px;
+    height: auto;
+}
+
+#contact-window {
+    max-width: 450px;
+}
+
+#about-window {
+    max-width: 600px;
+    height: 100%;
+}
+
+#work-window {
+    max-width: 500px;
+    height: 280px;
+}
+
+#project-window {
+    height: 100%;
+}
+
+//500px and up
+@media #{$breakpoint-more-than-small} {
+
+    #resume-window {
+        top: calc(100% - 219px - 7%);
+        left: 12%;
+    }
+
+    #me-window {
+        top: calc(50% - (515px / 2));
+        left: calc(100% - var(--width) - 3%);
+    }
+
+    #contact-window {
+        top: calc(100% - 520px - 4%);
+        left: calc(50% - (var(--width) / 2));
+    }
+
+    #about-window {
+        height: 360px;
+        top: 3%;
+        left: calc(100% - var(--width) - 6.25%);
+    }
+
+    #work-window {
+        height: 380px;
+        top: 11%;
+        left: 5%;
+    }
+
+    #project-window {
+        width: calc(100vw - 1rem);
+        height: calc(100% - 1rem);
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+}
+
+//1000px and up
+@media #{$breakpoint-more-than-medium} {
+
+    #project-window {
+        width: 1200px;
+        max-width: calc(100vw - 1rem);
+        left: calc(100% - (var(--width) + 2rem));
+    }
+}
+
+
+//500px and up
+@media #{$breakpoint-more-than-small} {
+
+    #resume-window {
+        top: calc(100% - 219px - 12%);
+        left: calc(50% - (var(--width) / 2) - 5%);
+    }
+
+    #me-window {
+        top: calc(50% - (515px / 2));
+        left: calc(100% - var(--width) - 5%);
+    }
+
+    #contact-window {
+        top: calc(100% - 520px - 4%);
+        left: calc(100% - var(--width) - 16%);
+    }
+
+    #about-window {
+        height: 360px;
+        top: 6%;
+        left: calc(100% - var(--width) - 20%);
+    }
+
+    #work-window {
+        height: 380px;
+        top: 10%;
+        left: 12%;
+    }
+}

@@ -1,0 +1,69 @@
+html {
+    --windowBackgroundColor: #FFFFFF;
+    --mainBackgroundColor: rgb(var(--mainBackgroundColorBase));
+    --mainBackgroundColorBase: 255, 253, 245;
+
+
+    --mainTextColor: #201e25;
+    --lightTextColor: #878787;
+    --grey: #BDBDBD;
+    --lightGrey: #EFEFEF;
+    --midGrey: #E7E7E7;
+
+
+    --aboutColor: #FFAD0E;
+    --lightAboutColor: #fff5dd;
+    // --midYellow: #FFDCA1;
+
+
+    --workColor: #5547EC;
+    --lightWorkColor: #EEEBF4;
+    // --midPurple: #CCC7F2;
+
+
+    --meColor: #FC664F;
+    --lightMeColor: #ffede4;
+    // --midRed: #fdcbbf;
+
+
+    --resumeColor: #0FBDA8;
+    --lightResumeColor: #EEF7F0;
+    --midResumeColor: #0DA593;
+
+    --contactColor: #15A6F8;
+    --lightContactColor: #edf6f6;
+    --midContactColor: #079aec;
+
+    // --pink: #EE7FAE;
+    // --medium-pink: #F1B7CF;
+    // --light-pink: #fdf0ee;
+}
+
+html[data-theme='dark'] {
+    --windowBackgroundColor: #2d2b31;
+    --mainBackgroundColorBase: 34, 30, 36;
+
+    --mainTextColor: #cccccc;
+
+    --lightTextColor: #b3b3b3;
+    --grey: #878787;
+    --lightGrey: #484951;
+    --midGrey: #BDBDBD;
+
+    --lightMeColor: #6e302b;
+    --meColor: #c75546;
+
+    --workColor: #675ec9;
+    --lightWorkColor: #373460;
+
+    --aboutColor: #cf9b3a;
+    --lightAboutColor: #785d2b;
+
+    --resumeColor: #219c8d;
+    --lightResumeColor: #0c554c;
+    --midResumeColor: #1f9386;
+
+    --contactColor: #1379b4;
+    --lightContactColor: #022d46;
+    --midContactColor: #178bcf;
+}

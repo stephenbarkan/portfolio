@@ -1,0 +1,68 @@
+#resume-window {
+
+    .window-padding {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .window-top-bar {
+        background-color: var(--resumeColor);
+    }
+
+    .window-header,
+    .window-bottom-bar {
+        background-color: var(--lightResumeColor);
+    }
+}
+
+.resume-title {
+    text-align: center;
+    margin-top: .25rem;
+    margin-bottom: 1rem;
+    @extend %mono;
+    @extend %small-text;
+}
+
+.button {
+    height: 2.5rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    transition: $timing-short;
+    cursor: pointer;
+}
+
+.disabled .button {
+    pointer-events: none;
+}
+
+.resume-button {
+    background-color: var(--resumeColor);
+
+    &:hover,
+    &:focus {
+        background-color: var(--midResumeColor);
+
+        & .button-icon-resume {
+            transform: translateY(.1rem);
+        }
+    }
+}
+
+.button-icon {
+    width: 22px;
+    height: 22px;
+    transition: inherit;
+}
+
+.button-icon-resume {
+    background-image: url(../img/download.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: $timing;
+}
