@@ -46,25 +46,26 @@ p {
 }
 
 
-h1 {
-    $map: (500px: 31px, 1500px: 60px);
+%h1 {
+    $map: (500px: 34px, 1500px: 60px, 2400px: 70px);
     @include poly-fluid-sizing('font-size', $map);
-
     white-space: normal;
 }
 
-h2 {
-    $map: (500px: 24px, 1500px: 26px);
-    @include poly-fluid-sizing('font-size', $map);
-}
-
-h3 {
+%h2 {
+    // $map: (500px: 24px, 1500px: 26px);
+    // @include poly-fluid-sizing('font-size', $map);
     $map: (500px: 20px, 1500px: 23px);
     @include poly-fluid-sizing('font-size', $map);
 }
 
+%h3 {
+    $map: (500px: 18px, 1500px: 20px);
+    @include poly-fluid-sizing('font-size', $map);
+}
 
-h4 {
+
+%h4 {
     $map: (500px: 25px, 1500px: 40px);
     @include poly-fluid-sizing('font-size', $map);
 }

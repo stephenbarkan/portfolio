@@ -1,4 +1,6 @@
 .window-wrapper {
+    --window-header-height: 50px;
+
     height: auto;
     width: calc(100% - .5rem);
     max-height: calc(100% - .5rem);
@@ -30,13 +32,13 @@
 }
 
 .window-top-bar {
-    height: 7px;
+    height: calc(var(--window-header-height) - 43px);
 }
 
 .window-content-wrapper {
     background: var(--windowBackgroundColor);
     pointer-events: auto;
-    height: calc(100% - 50px);
+    height: calc(100% - var(--window-header-height));
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -53,7 +55,7 @@
 }
 
 .window-header {
-    min-height: 43px;
+    min-height: calc(var(--window-header-height) - 7px);
     padding: .5rem .75rem;
     position: relative;
     display: flex;
@@ -67,6 +69,7 @@
     padding-top: .25rem;
     text-transform: capitalize;
     display: none;
+    @extend %h2;
 }
 
 .traffic-lights {
@@ -134,18 +137,16 @@
 
     .window-wrapper {
         max-width: calc(100% - 1rem);
+        --window-header-height: 70px;
+
     }
 
     .window-top-bar {
-        height: 10px;
-    }
-
-    .window-content-wrapper {
-        height: calc(100% - 70px);
+        height: calc(var(--window-header-height) - 60px);
     }
 
     .window-header {
-        min-height: 60px;
+        min-height: calc(var(--window-header-height) - 10px);
     }
 
     .window-title {

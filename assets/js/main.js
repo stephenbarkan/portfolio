@@ -267,8 +267,13 @@ const allWindowWidths = function () {
     windowWidth('#about-window')
 }
 
+const workGridItem = document.querySelector('.work-preview-wrapper')
+const workWindow = document.querySelector('#work-window')
 
-
+const workWindowResize = function () {
+    const workGridItemHeight = workGridItem.getBoundingClientRect().height
+    workWindow.style.setProperty('--height', workGridItemHeight + "px")
+}
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -277,6 +282,7 @@ $(window).resize(function () {
     dragging()
     onResize()
     allWindowWidths()
+    workWindowResize()
 })
 
 //when the document is ready...
@@ -286,6 +292,7 @@ $(document).ready(function () {
     onResize()
     overlayFadeOut()
     allWindowWidths()
+    workWindowResize()
 })
 
 //when the device orientation changes...

@@ -1,73 +1,67 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *::selection {
-    background-color: var(--mainTextColor);
-    color: var(--mainBackgroundColor);
+  background-color: var(--mainTextColor);
+  color: var(--mainBackgroundColor);
 }
 
 a:focus {
-    outline: none;
+  outline: none;
 }
 
 html {
-    @extend %body;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1.4;
-    color: var(--mainTextColor);
-    scroll-behavior: smooth;
+  @extend %body;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--mainTextColor);
+  scroll-behavior: smooth;
 
-    &.color-theme-in-transition *,
-    &.color-theme-in-transition *:before,
-    &.color-theme-in-transition *:after {
-        transition: color 750ms, background-color 750ms, border 750ms;
-        transition-delay: 0 !important;
-    }
+  &.color-theme-in-transition *,
+  &.color-theme-in-transition *:before,
+  &.color-theme-in-transition *:after {
+    transition: color 750ms, background-color 750ms, border 750ms;
+    transition-delay: 0 !important;
+  }
 }
 
-
-
 body {
-    background-color: var(--mainBackgroundColor);
-    display: flex;
-    width: 100%;
-    // justify-content: center;
-    overflow: hidden;
-    position: fixed;
+  background-color: var(--mainBackgroundColor);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
 
-    @media (min-width: 500px) {
-        &.window-open {
-            overflow: hidden;
-            position: fixed;
-        }
-
+  @media (min-width: 500px) {
+    &.window-open {
+      overflow: hidden;
+      position: fixed;
     }
+  }
 }
 
 button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    text-decoration: none;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-html[data-theme='dark'] {
-
-
-    img,
-    video,
-    .me-image {
-        opacity: .85;
-    }
+html[data-theme="dark"] {
+  img,
+  video,
+  .me-image {
+    opacity: 0.85;
+  }
 }

@@ -1,39 +1,49 @@
-{% extends "base.twig" %}
-
-
-{% block content %}
+{% extends "base.twig" %} {% block content %} {#
 <label class="theme-switcher">
-    <input type="checkbox" class="theme-switcher-input" id="theme-switcher-input">
-    <div class="theme-switcher-checkbox-ui"></div>
-    <span>color theme</span>
+  <input
+    type="checkbox"
+    class="theme-switcher-input"
+    id="theme-switcher-input"
+  />
+  <div class="theme-switcher-checkbox-ui"></div>
+  <span>color theme</span>
 </label>
+#}
 
 <main class="home-wrapper">
-    <h1><a href="#" id="me" class="headline-text-link">Stephen Barkan</a> is a designer excited about branding,
-        typography, and web design & development.</h1>
-    <h1>
-        <span class="headline-link-span">See <a href="#" id="work" class="headline-text-link">my work</a>, </span>
-        <span class="headline-link-span">learn
-            more <a href="#" id="about" class="headline-text-link">about
-                me</a>, </span><span class="headline-link-span">read <a href="#" id="resume"
-               class="headline-text-link">my
-                resume</a>, </span><span class="headline-link-span">or <a href="#" id="contact"
-               class="headline-text-link">contact me</a>.</span>
-    </h1>
+  <h1>
+    <a href="#" id="me" class="headline-text-link">Stephen Barkan</a> is a
+    designer excited about branding, typography, and web design & development.
+  </h1>
+  <h1>
+    <span class="headline-link-span"
+      >See <a href="#" id="work" class="headline-text-link">my work</a>,
+    </span>
+    <span class="headline-link-span"
+      >learn more
+      <a href="#" id="about" class="headline-text-link">about me</a>, </span
+    ><span class="headline-link-span"
+      >read
+      <a href="#" id="resume" class="headline-text-link">my resume</a>, </span
+    ><span class="headline-link-span"
+      >or
+      <a href="#" id="contact" class="headline-text-link">contact me</a>.</span
+    >
+  </h1>
 </main>
 
-
 <div class="windows-container">
-    {% include "partials/_window-me.twig" with {'color': '252, 102, 79', 'title': 'me'} %}
-    {% include "partials/_window-work.twig" with {'color': '85, 71, 236', 'title': 'work'} %}
-    {% include "partials/_window-resume.twig" with {'color': '15, 189, 168', 'title': 'resume'} %}
-    {% include "partials/_window-contact.twig" with {'color': '21, 166, 248', 'title': 'contact'} %}
-    {% include "partials/_window-about.twig" with {'color': '255, 173, 14', 'title': 'about'} %}
-    {% include "partials/_window-project.twig" with {'color': '238, 127, 174', 'title': 'project'} %}
+  {% include "partials/_window-me.twig" with {'color': '252, 102, 79', 'title':
+  'me'} %} {% include "partials/_window-work.twig" with {'color': '85, 71, 236',
+  'title': 'work'} %} {% include "partials/_window-resume.twig" with {'color':
+  '15, 189, 168', 'title': 'resume'} %} {% include
+  "partials/_window-contact.twig" with {'color': '21, 166, 248', 'title':
+  'contact'} %} {% include "partials/_window-about.twig" with {'color': '255,
+  173, 14', 'title': 'about'} %} {% include "partials/_window-project.twig" with
+  {'color': '238, 127, 174', 'title': 'project'} %}
 </div>
 <div class="fade-overlay"></div>
 <div class="rotate-pls">Please rotate your phone!</div>
-
 
 <button class="close-all">Close All</button>
 
