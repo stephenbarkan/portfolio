@@ -82,9 +82,7 @@ const windowFunctions = function () {
             closeAll()
             var post_url = $(this).attr("href");
             var post_title = $(this).attr("data-title")
-            var brand_color = $(this).css(`--brand-color`)
             $("#project-window .window-padding").html('<div class="loading"><span>Loading...</span></div>');
-            $('.loading').css('backgroundColor', brand_color)
             $("#project-window .window-padding").load(post_url);
             $('#project-window').removeClass('closed')
             $('.window-wrapper').addClass('disabled')
@@ -133,7 +131,6 @@ $(document).ajaxComplete(function () {
 
     losAnimated = document.querySelectorAll('.single-content > *')
     fadeIn()
-    singleScrollButton()
     windowWidth(`#project-window`)
     losAnimated.forEach(elTag => {
         elTag.style.opacity = 0
@@ -142,11 +139,6 @@ $(document).ajaxComplete(function () {
 
 
 })
-
-
-
-
-
 
 const fadeIn = function () {
     losAnimated.forEach(tag => {
@@ -163,51 +155,6 @@ $(`#project-window .window-content-wrapper`).scroll(function () {
     fadeIn()
 })
 
-
-//single scroll button 
-
-const singleScrollButton = function () {
-
-
-    // var elem = document.getElementById("single-scroll-target");
-
-
-    let topPos = $("#single-scroll-target").offset().top
-
-    document.getElementById('single-scroll-button').onclick = function () {
-        console.log(topPos)
-        topPos = $("#single-scroll-target").offset().top
-        scrollTo(document.getElementById('single-scroller'), topPos, 1000);
-    }
-
-    function scrollTo(element, to, duration) {
-        var start = element.scrollTop,
-            change = to - start,
-            currentTime = 0,
-            increment = 20;
-
-        var animateScroll = function () {
-            currentTime += increment;
-            var val = Math.easeInOutQuad(currentTime, start, change, duration);
-            element.scrollTop = val;
-            if (currentTime < duration) {
-                setTimeout(animateScroll, increment);
-            }
-        };
-        animateScroll();
-    }
-
-    //t = current time
-    //b = start value
-    //c = change in value
-    //d = duration
-    Math.easeInOutQuad = function (t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    };
-}
 
 
 
@@ -230,8 +177,6 @@ const dragging = function () {
 }
 
 ///////////////////////////////////////////////////////////////////////////
-
-
 
 
 

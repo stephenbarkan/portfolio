@@ -1,15 +1,34 @@
-<header class="single-header" style="--brand-color: {{post.brand_color}}">
-    <h1 class="single-title">{{post.big_text}}</h1>
-    <div class="single-cta">
-        See the site at <a target="_blank"
-           href="{{post.company_website}}">{{post.company_website|trim('https://www.')}}</a>
+<header class="single-meta">
+
+    {% if post.done_via %}
+    <div class="single-via">
+        <h6>Timeline</h6>
+        <p>{{post.done_via}}</p>
+    </div>
+    {% endif %}
+
+
+    <div class="single-services">
+        <h6>Services</h6>
+        <p>
+            {% for item in post.get_field('services_provided') %}
+            <span>{{ item.service }}</span>
+            {% endfor %}
+
+        </p>
     </div>
 
-    <button id="single-scroll-button" class="single-scroll-button">scroll</button>
+    {% if post.company_website %}
+    <div class="single-link">
+        <h6>Link</h6>
+        <p><a target="_blank"
+               href="{{post.company_website}}">{{post.company_website}}</a></p>
+    </div>
+    {% endif %}
+
 </header>
-<div class="single-container">
-    <div id="single-scroll-target" class="single-content">{{ post.content }}</div>
-</div>
+
+<div id="single-scroll-target" class="single-content">{{ post.content }}</div>
 
 
 

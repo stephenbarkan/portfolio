@@ -71,7 +71,6 @@
 
     &:hover {
         border-color: var(--grey);
-        color: var(--darkGrey);
         outline: none;
     }
 
@@ -101,6 +100,8 @@
 form label {
     @extend %small-text;
     @extend %mono;
+    color: var(--lightTextColor);
+    text-transform: capitalize;
 }
 
 input,
@@ -109,6 +110,7 @@ span.wpcf7-not-valid-tip {
     @extend %body;
     padding: .5rem;
     resize: none;
+    color: var(--mainTextColor);
 }
 
 input:-internal-autofill-selected {
@@ -136,6 +138,7 @@ span.wpcf7-not-valid-tip {
     font-size: .7rem;
     top: 4px;
     @extend %mono;
+    color: var(--meColor);
 }
 
 p:nth-child(4) span.wpcf7-not-valid-tip {
@@ -148,6 +151,7 @@ div.wpcf7 span.ajax-loader {
 
 
 div.wpcf7-response-output {
+    font-size: 18px;
     margin: 0;
     padding: 1rem;
     border: 2px solid var(--meColor);

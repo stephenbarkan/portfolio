@@ -81,8 +81,8 @@
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  text-transform: lowercase;
-  @extend %smaller-text;
+  text-transform: uppercase;
+  @extend %extra-small-text;
   text-decoration: none;
   align-items: center;
   border: var(--lightTextColor) 1px solid;

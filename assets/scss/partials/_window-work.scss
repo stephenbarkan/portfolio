@@ -1,5 +1,5 @@
 #work-window {
-    --work-window-spacing: 2rem;
+    --work-window-spacing: 1rem;
 
     .window-content-wrapper {
         display: flex;
@@ -40,7 +40,6 @@
     .work-preview-image-wrapper {
         overflow: hidden;
         transition: inherit;
-        border-radius: 2px;
         position: relative;
 
         .work-preview-overlay {
@@ -83,7 +82,7 @@
                 justify-content: center;
                 transition: inherit;
                 color: var(--windowBackgroundColor);
-                transform: translateX(-.25rem);
+                transform: translateX(-.5rem);
                 opacity: 0;
             }
         }
@@ -101,15 +100,14 @@
     }
 
     .work-preview-text {
-        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     h3 {
         @extend %body;
         @extend %h3;
-        font-weight: 500;
-        margin: 0 0 0.25rem;
         width: 100%;
+        text-align: center;
     }
 
     &:hover,

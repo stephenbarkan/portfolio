@@ -83,18 +83,23 @@
 
     &:focus::after,
     &:hover::after {
-        content: url(../img/traffic_lights.svg);
+        content: '';
         position: absolute;
-        top: -1px;
+        top: 0;
         left: 0;
-        bottom: 0;
-        right: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+        background-size: 100%;
+        background-image: url(../img/traffic_lights.svg);
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
 
 .traffic-light {
-    width: .75rem;
-    height: .75rem;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
 
     &+& {
@@ -137,16 +142,16 @@
 
     .window-wrapper {
         max-width: calc(100% - 1rem);
-        --window-header-height: 70px;
+        --window-header-height: 60px;
 
     }
 
     .window-top-bar {
-        height: calc(var(--window-header-height) - 60px);
+        height: calc(var(--window-header-height) - 51px);
     }
 
     .window-header {
-        min-height: calc(var(--window-header-height) - 10px);
+        min-height: calc(var(--window-header-height) - 9px);
     }
 
     .window-title {

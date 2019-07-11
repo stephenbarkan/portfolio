@@ -12,7 +12,7 @@
 }
 
 #me-window {
-  max-width: 400px;
+  max-width: 370px;
   height: auto;
 }
 
@@ -59,10 +59,10 @@
   #work-window {
     top: calc(50% - (.5* (var(--height) + var(--window-header-height) + (2 * var(--work-window-spacing)))));
     left: 1rem;
-    min-height: 520px;
+    min-height: 466px;
     height: calc(var(--height) + var(--window-header-height) + (2 * var(--work-window-spacing)));
     max-height: calc(100% - 1rem);
-    width: 942px;
+    width: 862px;
 
   }
 

@@ -29,8 +29,9 @@ h1+h1 {
 
 
 
-p {
-    $map: (500px: 16px, 1000px: 18px);
+p,
+ul {
+    $map: (500px: 16px, 1500px: 18px);
     @include poly-fluid-sizing('font-size', $map);
     line-height: 1.7;
 
@@ -47,14 +48,12 @@ p {
 
 
 %h1 {
-    $map: (500px: 34px, 1500px: 60px, 2400px: 70px);
+    $map: (500px: 34px, 1500px: 64px, 2400px: 70px);
     @include poly-fluid-sizing('font-size', $map);
     white-space: normal;
 }
 
 %h2 {
-    // $map: (500px: 24px, 1500px: 26px);
-    // @include poly-fluid-sizing('font-size', $map);
     $map: (500px: 20px, 1500px: 23px);
     @include poly-fluid-sizing('font-size', $map);
 }
