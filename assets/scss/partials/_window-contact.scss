@@ -1,11 +1,11 @@
 #contact-window {
 
     .window-top-bar {
-        background-color: var(--contactColor);
+        background-color: rgba(var(--contactColor), 1);
     }
 
     .window-header {
-        background-color: var(--lightContactColor);
+        background-color: rgba(var(--lightContactColor), 1);
     }
 }
 
@@ -40,12 +40,12 @@
         top: 50%;
         left: 50%;
         transform: translate(-40%, -55%);
-        transition: $timing;
+        transition: $timing var(--easing);
         pointer-events: none;
     }
 
     &:hover .wpcf7-submit {
-        background-color: var(--midContactColor);
+        background-color: rgba(var(--midContactColor), 1);
     }
 
     &:hover::after,
@@ -61,21 +61,21 @@
 
 .wpcf7-form-control {
     width: 100%;
-    transition: $timing-short;
+    transition: $timing var(--easing);
     border: none;
     @extend %body;
     border-radius: 0 !important;
-    border-bottom: 1px solid var(--midGrey);
+    border-bottom: 1px solid rgba(var(--midGrey), 1);
     padding: .5rem 0 .25rem 0;
     background: transparent;
 
     &:hover {
-        border-color: var(--grey);
+        border-color: rgba(var(--grey), 1);
         outline: none;
     }
 
     &:focus {
-        border-bottom: 1px solid var(--mainTextColor);
+        border-bottom: 1px solid rgba(var(--mainTextColor), 1);
         outline: none;
     }
 
@@ -85,14 +85,14 @@
 
 .wpcf7-submit {
     @extend .button;
-    background-color: var(--contactColor);
+    background-color: rgba(var(--contactColor), 1);
     width: 10rem;
     font-size: 0;
     position: relative;
     border-radius: 0 !important;
 
     &:focus {
-        background-color: var(--midContactColor);
+        background-color: rgba(var(--midContactColor), 1);
     }
 
 }
@@ -100,7 +100,7 @@
 form label {
     @extend %small-text;
     @extend %mono;
-    color: var(--lightTextColor);
+    color: rgba(var(--lightTextColor), 1);
     text-transform: capitalize;
 }
 
@@ -110,13 +110,13 @@ span.wpcf7-not-valid-tip {
     @extend %body;
     padding: .5rem;
     resize: none;
-    color: var(--mainTextColor);
+    color: rgba(var(--mainTextColor), 1);
 }
 
 input:-internal-autofill-selected {
-    background-color: var(--lightGrey) !important;
+    background-color: rgba(var(--lightGrey), 1) !important;
     background-image: none !important;
-    color: var(--mainTextColor) !important;
+    color: rgba(var(--mainTextColor), 1) !important;
 }
 
 .wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors {
@@ -138,7 +138,7 @@ span.wpcf7-not-valid-tip {
     font-size: .7rem;
     top: 4px;
     @extend %mono;
-    color: var(--meColor);
+    color: rgba(var(--meColor), 1);
 }
 
 p:nth-child(4) span.wpcf7-not-valid-tip {
@@ -154,7 +154,7 @@ div.wpcf7-response-output {
     font-size: 18px;
     margin: 0;
     padding: 1rem;
-    border: 2px solid var(--meColor);
+    border: 2px solid rgba(var(--meColor), 1);
     text-align: center;
     width: 305px;
     background-color: white;
@@ -176,7 +176,7 @@ div.wpcf7-response-output {
 }
 
 div.wpcf7-mail-sent-ok {
-    border: 2px solid var(--resumeColor);
-    background-color: var(--windowBackgroundColor);
+    border: 2px solid rgba(var(--resumeColor), 1);
+    background-color: rgba(var(--windowBackgroundColor), 1);
     animation: mail-sent-fadeout 1s 2s forwards;
 }

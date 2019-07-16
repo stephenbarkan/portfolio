@@ -1,18 +1,15 @@
 {% block html_head %}
 {% include 'html-header.twig' %}
-{% block head %}
-{% endblock %}
 </head>
 {% endblock %}
+
 
 <body class="{{body_class}}" id="containment-wrapper" data-template="base.twig">
 	<div class="body-wrapper">
 
-
 		{% block content %}
 		Sorry, no content
 		{% endblock %}
-
 
 		{{ function('wp_footer') }}
 	</div>

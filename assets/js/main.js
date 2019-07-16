@@ -145,7 +145,7 @@ const fadeIn = function () {
         const tagTop = tag.getBoundingClientRect().top
 
         if (tagTop < window.innerHeight - 200) {
-            tag.style.animation = `fadeIn .8s both cubic-bezier(.25,.46,.45,.94)`;
+            tag.style.animation = `fadeIn .8s both var(--easing)`;
         }
     })
 }

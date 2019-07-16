@@ -32,17 +32,15 @@ $timing-short: $timing/2;
 $timing-medium: $timing*1.5;
 $timing-long: $timing*2;
 
-$border-small: 1px solid var(--lightGrey);
-// var(--boxShadow): 0 15px 50px rgba(50, 50, 93, .1),
-// 0 5px 35px rgba(0, 0, 0, .07);
-// var(--boxShadow)-small: 0 10px 35px rgba(50, 50, 93, .02),
-// 0 3px 15px rgba(0, 0, 0, .0125);
+$border-small: 1px solid rgba(var(--lightGrey), 1);
+
 
 html {
     --boxShadow: 0 15px 50px rgba(50, 50, 93, .1),
         0 5px 35px rgba(0, 0, 0, .07);
     --boxShadowSmall: 0 10px 35px rgba(50, 50, 93, .02),
         0 3px 15px rgba(0, 0, 0, .0125);
+    --easing: cubic-bezier(.25, .46, .45, .94);
 
     [data-theme="dark"] {
         --boxShadow: 0 15px 50px rgba(50, 50, 93, 1), 0 5px 35px rgba(0, 0, 0, 1);

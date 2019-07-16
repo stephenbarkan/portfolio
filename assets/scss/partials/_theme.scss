@@ -1,12 +1,7 @@
-// <label class="theme-switcher">
-//     <input type="checkbox" class="theme-switcher-input">
-//     <div class="theme-switcher-checkbox-ui"></div>
-// </label>
-
 .theme-switcher {
     position: fixed;
-    bottom: 1rem;
-    left: 1rem;
+    top: 1rem;
+    right: 1rem;
     width: 46px;
     height: 24px;
     box-sizing: content-box;
@@ -16,13 +11,13 @@
         @extend %mono;
         @extend %extra-small-text;
         position: absolute;
-        right: -190%;
-        top: 15%;
+        left: -190%;
+        bottom: -.25rem;
         text-align: center;
         opacity: 1;
         transform: none;
-        transition: all $timing;
-        color: var(--lightTextColor);
+        transition: all $timing-long var(--easing);
+        color: rgba(var(--lightTextColor), 1);
         padding-bottom: .5rem;
     }
 }
@@ -43,9 +38,9 @@
         display: block;
         height: 100%;
         width: 100%;
-        border: var(--grey) 1px solid;
+        border: rgba(var(--grey), 1) 1px solid;
         border-radius: 9999px;
-        transition: background-color 150ms ease-out !important;
+        transition: background-color $timing-long var(--easing) !important;
     }
 
     &::after {
@@ -55,10 +50,10 @@
         height: 16px;
         top: 50%;
         transform: translateY(-50%);
-        left: .125rem;
-        background: var(--grey);
+        left: 5px;
+        background: rgba(var(--grey), 1);
         border-radius: 9999px;
-        transition: transform $timing ease-out 0s, background-color $timing-short !important;
+        transition: transform $timing-long var(--easing), background-color $timing-long var(--easing) !important;
     }
 }
 
@@ -75,15 +70,15 @@
     margin: 0px;
 
     &:hover+.theme-switcher-checkbox-ui::before {
-        background: var(--mainTextColor);
+        background: rgba(var(--mainTextColor), 1);
     }
 
     &:focus+.theme-switcher-checkbox-ui::after {
-        background: var(--lightTextColor);
+        background: rgba(var(--lightTextColor), 1);
     }
 
     &:hover+.theme-switcher-checkbox-ui::after {
-        background: var(--windowBackgroundColor);
+        background: rgba(var(--windowBackgroundColor), 1);
     }
 
     &:hover+.theme-switcher-checkbox-ui+span {
@@ -94,20 +89,18 @@
 
 .theme-switcher-input:checked+.theme-switcher-checkbox-ui::after {
 
-    transform: translateY(-50%) translateX(22px);
+    transform: translateY(-50%) translateX(21px);
 
 }
 
 @media #{$breakpoint-more-than-small} {
     .theme-switcher {
-        bottom: 2rem;
-        left: 2rem;
         transform: none;
 
         span {
             opacity: 0;
-            transform: translateY(.25rem);
-            top: -2rem;
+            transform: translateY(-.25rem);
+            bottom: -2.5rem;
             left: 0;
             right: 0;
             color: inherit;

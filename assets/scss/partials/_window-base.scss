@@ -9,7 +9,7 @@
     right: .25rem;
     position: absolute;
     pointer-events: all;
-    border-radius: 2px;
+    border-radius: 3px;
     box-shadow: var(--boxShadow);
     opacity: 1;
     transition: opacity $timing;
@@ -36,13 +36,18 @@
 }
 
 .window-content-wrapper {
-    background: var(--windowBackgroundColor);
+    background: rgba(var(--windowBackgroundColor), 1);
     pointer-events: auto;
     height: calc(100% - var(--window-header-height));
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     outline: none;
+
+    @supports (backdrop-filter:saturate(180%) blur(20px)) {
+        background-color: rgba(var(--windowBackgroundColor), .8);
+        backdrop-filter: saturate(200%) blur(40px);
+    }
 }
 
 
@@ -107,34 +112,34 @@
     }
 
     &-red {
-        background-color: var(--meColor);
+        background-color: rgba(var(--meColor), 1);
     }
 
     &-yellow {
-        background-color: var(--aboutColor);
+        background-color: rgba(var(--aboutColor), 1);
     }
 
     &-green {
-        background-color: var(--resumeColor);
+        background-color: rgba(var(--resumeColor), 1);
     }
 }
 
 .window-wrapper.disabled .traffic-light {
-    background-color: var(--grey);
+    background-color: rgba(var(--grey), 1);
 }
 
 .window-wrapper.disabled .traffic-lights:hover .traffic-light,
 .window-wrapper.disabled .traffic-lights:focus .traffic-light {
     &-red {
-        background-color: var(--meColor);
+        background-color: rgba(var(--meColor), 1);
     }
 
     &-yellow {
-        background-color: var(--aboutColor);
+        background-color: rgba(var(--aboutColor), 1);
     }
 
     &-green {
-        background-color: var(--resumeColor);
+        background-color: rgba(var(--resumeColor), 1);
     }
 }
 

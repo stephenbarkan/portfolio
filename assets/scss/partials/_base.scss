@@ -7,8 +7,8 @@
 }
 
 *::selection {
-  background-color: var(--mainTextColor);
-  color: var(--mainBackgroundColor);
+  background-color: rgba(var(--mainTextColor), 1);
+  color: rgba(var(--mainBackgroundColor), 1);
 }
 
 a:focus {
@@ -20,19 +20,19 @@ html {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.4;
-  color: var(--mainTextColor);
+  color: rgba(var(--mainTextColor), 1);
   scroll-behavior: smooth;
 
   &.color-theme-in-transition *,
   &.color-theme-in-transition *:before,
   &.color-theme-in-transition *:after {
-    transition: color 750ms, background-color 750ms, border 750ms;
+    transition: color 0, background-color 0, border 0 !important;
     transition-delay: 0 !important;
   }
 }
 
 body {
-  background-color: var(--mainBackgroundColor);
+  background-color: rgba(var(--mainBackgroundColor), 1);
   display: flex;
   width: 100%;
   justify-content: center;
@@ -40,6 +40,10 @@ body {
   position: fixed;
 
   @media (min-width: 500px) {
+
+    overflow: inherit;
+    position: static;
+
     &.window-open {
       overflow: hidden;
       position: fixed;

@@ -1,12 +1,12 @@
 #project-window {
 
     & .window-top-bar {
-        background-color: var(--grey);
+        background-color: rgba(var(--grey), 1);
     }
 
     & .window-header,
     & .window-bottom-bar {
-        background-color: var(--lightGrey);
+        background-color: rgba(var(--lightGrey), 1);
     }
 
     & .window-padding {

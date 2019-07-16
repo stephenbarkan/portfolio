@@ -5,12 +5,12 @@
     }
 
     .window-top-bar {
-        background-color: var(--aboutColor);
+        background-color: rgba(var(--aboutColor), 1);
     }
 
     .window-header,
     .window-bottom-bar {
-        background-color: var(--lightAboutColor);
+        background-color: rgba(var(--lightAboutColor), 1);
     }
 
     p {

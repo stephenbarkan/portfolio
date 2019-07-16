@@ -1,11 +1,11 @@
 #me-window {
 
     .window-top-bar {
-        background-color: var(--meColor);
+        background-color: rgba(var(--meColor), 1);
     }
 
     .window-header {
-        background-color: var(--lightMeColor);
+        background-color: rgba(var(--lightMeColor), 1);
     }
 }
 
@@ -45,7 +45,7 @@
     }
 
     & svg {
-        fill: var(--mainTextColor);
+        fill: rgba(var(--mainTextColor), 1);
     }
 }
 
@@ -82,11 +82,11 @@
 
 
     & svg {
-        stroke: var(--mainTextColor);
+        stroke: rgba(var(--mainTextColor), 1);
 
         &.liked {
-            stroke: var(--meColor);
-            fill: var(--meColor);
+            stroke: rgba(var(--meColor), 1);
+            fill: rgba(var(--meColor), 1);
         }
 
         &.animating {

@@ -29,7 +29,7 @@
     align-items: center;
     @extend %clearface;
     @extend %h2;
-    background-color: var(--windowBackgroundColor);
+    background-color: rgba(var(--windowBackgroundColor), 1);
 
     span {
         opacity: 0;
@@ -57,7 +57,7 @@
     justify-content: space-between;
     padding-top: .25rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid rgba(var(--grey), 1);
     margin: 0 auto;
 
     @media (min-width: 860px) {
@@ -69,14 +69,14 @@
         @extend %extra-small-text;
         text-transform: uppercase;
         display: block;
-        color: var(--lightTextColor);
+        color: rgba(var(--lightTextColor), 1);
     }
 
     p {
         @extend %mono;
         @extend %smaller-text;
         text-transform: none;
-        color: var(--mainTextColor);
+        color: rgba(var(--mainTextColor), 1);
     }
 
     a {
@@ -185,13 +185,13 @@
             margin-bottom: 0;
             margin-left: auto;
             margin-right: auto;
-            color: var(--lightTextColor);
+            color: rgba(var(--lightTextColor), 1);
             width: 800px;
             max-width: 100%;
             font-weight: normal;
             @extend %mono;
             text-align: left;
-            border-top: 1px solid var(--grey);
+            border-top: 1px solid rgba(var(--grey), 1);
             padding-top: 1rem;
             line-height: 1.7;
             @extend %smaller-text;
@@ -199,12 +199,12 @@
             padding-right: 10vw;
 
             & a {
-                color: var(--lightTextColor);
-                transition: $timing-short;
+                color: rgba(var(--lightTextColor), 1);
+                transition: $timing var(--easing);
 
                 &:hover,
                 &:focus {
-                    color: var(--mainTextColor);
+                    color: rgba(var(--mainTextColor), 1);
                 }
             }
         }
@@ -239,13 +239,28 @@
 
         &.mobile {
 
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 1.25rem;
+                border-radius: 3px;
+                height: 6px;
+                width: 2.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 4rem;
+                line-height: 0;
+                background-color: rgba(var(--windowBackgroundColor), 1);
+            }
+
             img,
             video,
             svg {
                 width: 300px;
-                border: 10px var(--midGrey) solid;
+                border: 10px rgba(var(--midGrey), 1) solid;
                 border-radius: 1.5rem;
-                background: var(--midGrey);
+                background: rgba(var(--midGrey), 1);
                 padding-bottom: 2rem;
                 padding-top: 2rem;
             }
@@ -272,10 +287,22 @@
         }
 
         &.webpage {
+
+            &::after {
+                content: '•••';
+                display: block;
+                position: absolute;
+                top: 8px;
+                left: 4px;
+                font-size: 2rem;
+                line-height: 0;
+                color: rgba(var(--windowBackgroundColor), 1);
+            }
+
             video {
-                border: 1px var(--midGrey) solid;
+                border: 1px rgba(var(--midGrey), 1) solid;
                 border-radius: 4px;
-                background: var(--midGrey);
+                background: rgba(var(--midGrey), 1);
                 padding-top: 1rem;
             }
         }
@@ -295,17 +322,17 @@
 
     .single-content {
 
-        & h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        ul {
-            padding-left: .75rem;
-            padding-right: .75rem;
-        }
+        // & h1,
+        // h2,
+        // h3,
+        // h4,
+        // h5,
+        // h6,
+        // p,
+        // ul {
+        //     padding-left: .75rem;
+        //     padding-right: .75rem;
+        // }
 
         h3 {
             margin-top: var(--singleSpacing);
@@ -323,8 +350,8 @@
         figure {
             margin-top: var(--singleSpacing);
             margin-bottom: var(--singleSpacing);
-            padding-left: .75rem;
-            padding-right: .75rem;
+            // padding-left: .75rem;
+            // padding-right: .75rem;
         }
     }
 
@@ -338,17 +365,17 @@
 
     .single-content {
 
-        & h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        ul {
-            padding-left: 3rem;
-            padding-right: 3rem;
-        }
+        // & h1,
+        // h2,
+        // h3,
+        // h4,
+        // h5,
+        // h6,
+        // p,
+        // ul {
+        //     padding-left: 3rem;
+        //     padding-right: 3rem;
+        // }
 
         h3 {
             margin-top: var(--singleSpacing);
@@ -366,8 +393,8 @@
         figure {
             margin-top: var(--singleSpacing);
             margin-bottom: var(--singleSpacing);
-            padding-left: 3rem;
-            padding-right: 3rem;
+            // padding-left: 3rem;
+            // padding-right: 3rem;
         }
 
     }

@@ -1,33 +1,29 @@
 html {
-  --windowBackgroundColor: #ffffff;
-  --mainBackgroundColor: rgb(var(--mainBackgroundColorBase));
-  --mainBackgroundColorBase: 255, 253, 245;
+  --mainBackgroundColor: 255, 253, 245;
+  --windowBackgroundColor: 255, 255, 255;
 
-  --mainTextColor: #000000;
-  --lightTextColor: #878787;
-  --grey: #bdbdbd;
-  --lightGrey: #efefef;
-  --midGrey: #e7e7e7;
+  --mainTextColor: 0, 0, 0;
+  --lightTextColor: 135, 135, 135;
+  --grey: 189, 189, 189;
+  --lightGrey: 239, 239, 239;
+  --midGrey: 231, 231, 231;
 
-  --aboutColor: #ffad0e;
-  --lightAboutColor: #fff5dd;
-  // --midYellow: #FFDCA1;
+  --aboutColor: 255, 173, 14;
+  --lightAboutColor: 255, 245, 221;
 
-  --workColor: #5547ec;
-  --lightWorkColor: #eeebf4;
-  // --midPurple: #CCC7F2;
+  --workColor: 85, 71, 236;
+  --lightWorkColor: 238, 235, 244;
 
-  --meColor: #fc664f;
-  --lightMeColor: #ffede4;
-  // --midRed: #fdcbbf;
+  --meColor: 252, 102, 79;
+  --lightMeColor: 255, 237, 228;
 
-  --resumeColor: #0fbda8;
-  --lightResumeColor: #eef7f0;
-  --midResumeColor: #0da593;
+  --resumeColor: 15, 189, 168;
+  --lightResumeColor: 238, 247, 240;
+  --midResumeColor: 13, 165, 147;
 
-  --contactColor: #15a6f8;
-  --lightContactColor: #edf6f6;
-  --midContactColor: #079aec;
+  --contactColor: 21, 166, 248;
+  --lightContactColor: 237, 246, 246;
+  --midContactColor: 7, 154, 236;
 
   // --pink: #EE7FAE;
   // --medium-pink: #F1B7CF;
@@ -35,30 +31,30 @@ html {
 }
 
 html[data-theme="dark"] {
-  --windowBackgroundColor: #2d2b31;
-  --mainBackgroundColorBase: 34, 30, 36;
+  --mainBackgroundColor: 34, 30, 36;
+  --windowBackgroundColor: 45, 43, 49;
 
-  --mainTextColor: #cccccc;
+  --mainTextColor: 204, 204, 204;
 
-  --lightTextColor: #b3b3b3;
-  --grey: #878787;
-  --lightGrey: #484951;
-  --midGrey: #bdbdbd;
+  --lightTextColor: 179, 179, 179;
+  --grey: 135, 135, 135;
+  --lightGrey: 72, 73, 81;
+  --midGrey: 189, 189, 189;
 
-  --lightMeColor: #6e302b;
-  --meColor: #c75546;
+  --lightMeColor: 110, 48, 43;
+  --meColor: 199, 85, 70;
 
-  --workColor: #675ec9;
-  --lightWorkColor: #373460;
+  --workColor: 103, 94, 201;
+  --lightWorkColor: 55, 52, 96;
 
-  --aboutColor: #cf9b3a;
-  --lightAboutColor: #785d2b;
+  --aboutColor: 207, 155, 58;
+  --lightAboutColor: 120, 93, 43;
 
-  --resumeColor: #219c8d;
-  --lightResumeColor: #0c554c;
-  --midResumeColor: #1f9386;
+  --resumeColor: 33, 156, 141;
+  --lightResumeColor: 12, 85, 76;
+  --midResumeColor: 31, 147, 134;
 
-  --contactColor: #1379b4;
-  --lightContactColor: #022d46;
-  --midContactColor: #178bcf;
+  --contactColor: 19, 121, 180;
+  --lightContactColor: 3, 64, 99;
+  --midContactColor: 23, 139, 207;
 }

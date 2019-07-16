@@ -26,7 +26,8 @@
 }
 
 #work-window {
-  height: 100%;
+  max-width: 430px;
+  height: 456px;
 }
 
 #project-window {
@@ -50,20 +51,15 @@
     left: calc(50% - (var(--width) / 2));
   }
 
+  #work-window {
+    top: 10%;
+    left: 7%;
+  }
+
   #about-window {
     height: 360px;
     top: 3%;
     left: calc(100% - var(--width) - 6.25%);
-  }
-
-  #work-window {
-    top: calc(50% - (.5* (var(--height) + var(--window-header-height) + (2 * var(--work-window-spacing)))));
-    left: 1rem;
-    min-height: 466px;
-    height: calc(var(--height) + var(--window-header-height) + (2 * var(--work-window-spacing)));
-    max-height: calc(100% - 1rem);
-    width: 862px;
-
   }
 
   #project-window {
@@ -80,9 +76,5 @@
     width: 1210px;
     max-width: calc(100vw - 1rem);
     left: calc(100% - (var(--width) + 2rem));
-  }
-
-  #work-window {
-    max-width: calc(100vw - 1rem);
   }
 }

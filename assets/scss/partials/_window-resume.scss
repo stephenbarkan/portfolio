@@ -8,12 +8,12 @@
     }
 
     .window-top-bar {
-        background-color: var(--resumeColor);
+        background-color: rgba(var(--resumeColor), 1);
     }
 
     .window-header,
     .window-bottom-bar {
-        background-color: var(--lightResumeColor);
+        background-color: rgba(var(--lightResumeColor), 1);
     }
 }
 
@@ -33,7 +33,7 @@
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    transition: $timing-short;
+    transition: $timing var(--easing);
     cursor: pointer;
 }
 
@@ -42,11 +42,11 @@
 }
 
 .resume-button {
-    background-color: var(--resumeColor);
+    background-color: rgba(var(--resumeColor), 1);
 
     &:hover,
     &:focus {
-        background-color: var(--midResumeColor);
+        background-color: rgba(var(--midResumeColor), 1);
 
         & .button-icon-resume {
             transform: translateY(.1rem);

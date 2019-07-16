@@ -31,9 +31,9 @@ $args = array(
 
 // If we are on the home page, add a few other templates to our hierarchy.
 $templates = array( 'index.twig' );
-$context['posts'] = Timber::get_posts( $args );
+$posts = Timber::get_posts( $args );
+// $context['posts'] = $posts;
+// $context['posts_number'] = count($posts);
 $context['options'] = get_fields('options');
-// if ( is_home() ) {
-// 	array_unshift( $templates, 'front-page.twig', 'home.twig' );
-// }
-Timber::render( $templates, $context );
+
+Timber::render( $templates, $context, $posts_number );
