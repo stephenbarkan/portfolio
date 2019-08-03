@@ -12,54 +12,56 @@
 }
 
 #me-window {
-  max-width: 370px;
   height: auto;
 }
 
 #contact-window {
-  max-width: 450px;
+  height: calc(100% - .5rem);
 }
 
 #about-window {
-  max-width: 600px;
-  height: 100%;
+  height: calc(100% - .5rem);
 }
 
 #work-window {
   max-width: 430px;
-  height: 456px;
+  max-height: 456px;
 }
 
 #project-window {
-  height: 100%;
+  height: calc(100% - .5rem);
 }
 
 //500px and up
 @media #{$breakpoint-more-than-small} {
   #resume-window {
-    top: calc(100% - 219px - 7%);
+    top: calc(100% - 219px - 3rem);
     left: 12%;
   }
 
   #me-window {
-    top: calc(50% - (515px / 2));
-    left: calc(100% - var(--width) - 3%);
+    top: 1rem;
+    left: calc(100% - var(--width) - 6rem);
+    max-width: 370px;
   }
 
   #contact-window {
-    top: calc(100% - 520px - 4%);
+    top: 5%;
     left: calc(50% - (var(--width) / 2));
+    height: 600px;
+    max-width: 360px;
   }
 
   #work-window {
-    top: 10%;
-    left: 7%;
+    top: 15%;
+    left: 3%;
   }
 
   #about-window {
-    height: 360px;
-    top: 3%;
-    left: calc(100% - var(--width) - 6.25%);
+    height: 650px;
+    max-width: 590px;
+    top: 10%;
+    left: calc(100% - var(--width) - 2rem);
   }
 
   #project-window {

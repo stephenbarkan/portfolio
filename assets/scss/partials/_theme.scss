@@ -1,6 +1,6 @@
 .theme-switcher {
     position: fixed;
-    top: 1rem;
+    bottom: 22px;
     right: 1rem;
     width: 46px;
     height: 24px;
@@ -96,6 +96,7 @@
 @media #{$breakpoint-more-than-small} {
     .theme-switcher {
         transform: none;
+        top: 22px;
 
         span {
             opacity: 0;
@@ -105,5 +106,17 @@
             right: 0;
             color: inherit;
         }
+    }
+}
+
+html {
+
+    &,
+    &.color-theme-in-transition *,
+    &.color-theme-in-transition *:before,
+    &.color-theme-in-transition *:after {
+        transition-duration: 0ms !important;
+        transition-property: color, background-color, border !important;
+        transition-delay: 0 !important;
     }
 }

@@ -1,4 +1,75 @@
+@keyframes messageReceive {
+    0% {
+        opacity: 0;
+        transform: translateY(.5rem);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes typingBubbleClear {
+    0% {
+        opacity: 0;
+        transform: translateY(.5rem);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+        transform: none;
+    }
+
+    80% {
+        opacity: 1;
+        transform: none;
+    }
+
+    100% {
+        transform: translateY(.5rem);
+        opacity: 0;
+    }
+}
+
+@keyframes typingDots {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translateY(1px);
+    }
+
+    50% {
+        transform: translateY(0);
+        opacity: .5;
+    }
+
+    75% {
+        transform: translateY(-1px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 #contact-window {
+
+    .window-content-wrapper {
+        overflow: hidden;
+    }
 
     .window-top-bar {
         background-color: rgba(var(--contactColor), 1);
@@ -7,176 +78,342 @@
     .window-header {
         background-color: rgba(var(--lightContactColor), 1);
     }
+
+    .window-padding {
+        padding: 0;
+    }
 }
 
-
-.wpcf7-form {
+.chat-window {
+    flex-grow: 1;
     display: flex;
-    flex-direction: column;
-}
-
-.wpcf7 p+p {
-    margin-top: .75em;
-}
-
-.wpcf7 p:last-of-type {
-    line-height: 0;
     position: relative;
-    align-self: center;
 
-    & input {
-        border-bottom: none;
-    }
-
-    &::after {
-        content: '';
+    .chat {
+        flex-grow: 1;
+        flex-direction: column;
+        display: flex;
         position: absolute;
-        background-image: url(../img/send.svg);
-        width: 22px;
-        height: 22px;
-        transition: inherit;
-        background-size: cover;
-        background-repeat: no-repeat;
-        top: 50%;
-        left: 50%;
-        transform: translate(-40%, -55%);
-        transition: $timing var(--easing);
-        pointer-events: none;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+
+        & ::-webkit-scrollbar {
+            width: 0px;
+            height: 1px;
+            transition: all .5s;
+            z-index: 10;
+        }
+
+        & ::-webkit-scrollbar-track {
+            background-color: rgba(var(--windowBackgroundColor), 1);
+        }
+
+        & ::-webkit-scrollbar-thumb {
+            background-color: rgba(var(--lightGrey), 1);
+            border-radius: 3px;
+        }
     }
 
-    &:hover .wpcf7-submit {
-        background-color: rgba(var(--midContactColor), 1);
+
+    .messages {
+        flex-grow: 1;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        position: relative;
+        border-bottom: 1px solid rgba(var(--midGrey), 1);
+        display: flex;
+        flex-direction: column;
+        padding: .75rem;
+
+        &>*+* {
+            margin-top: 1rem;
+        }
     }
 
-    &:hover::after,
-    &:focus-within::after {
-        transform: translate(-30%, -60%);
+
+
+
+    .myMessage,
+    .fromThem {
+        max-width: 90%;
+        word-wrap: break-word;
+        position: relative;
+        padding: .35rem .75rem;
+        border-radius: 1.125rem;
+        clear: both;
+        animation: messageReceive .6s var(--easing);
+
+        p {
+            line-height: 1.4;
+            min-height: 1.4em;
+        }
     }
 
+    .myMessage {
+        background-color: rgba(var(--contactColor), 1);
+        color: rgba(var(--windowBackgroundColor), 1);
+        align-self: flex-end;
+        clear: both;
+        border-bottom-right-radius: 20px 0px\9;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: -2px;
+            right: 0;
+            height: 50%;
+            border-right: 10px solid rgba(var(--contactColor), 1);
+            border-bottom-left-radius: 16px 14px;
+            -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+            border-bottom-left-radius: 15px 0px\9;
+            transform: translate(-1px, -2px)\9;
+        }
+    }
+
+    .fromThem {
+        background: rgba(var(--lightGrey), 1);
+        float: left;
+        clear: both;
+        border-bottom-left-radius: 30px 0px\9;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: -2px;
+            left: 0;
+            height: 50%;
+            border-left: 10px solid rgba(var(--lightGrey), 1);
+            border-bottom-right-radius: 16px 14px;
+            -webkit-transform: translate(0, -2px);
+            transform: translate(0, -2px);
+            border-bottom-right-radius: 15px 0px\9;
+            transform: translate(-1px, -2px)\9;
+        }
+    }
+
+    .typingDots {
+        margin-top: auto;
+
+        p {
+            min-height: 0;
+        }
+    }
+
+    .message.typing {
+
+        margin-top: 1rem;
+        animation: typingBubbleClear var(--easing) 1.75s forwards;
+
+        p {
+            font-size: 1.5rem;
+            line-height: .75;
+            color: rgba(var(--lightTextColor), 1);
+        }
+
+        span {
+            display: inline-block;
+            animation: typingDots 1s infinite linear;
+        }
+
+        @for $i from 1 to 3 {
+            span:nth-child(#{$i}) {
+                animation-delay: $i * -0.33s;
+            }
+        }
+    }
+
+    .chat-controls {
+        display: flex;
+        padding: .75rem;
+        flex-shrink: 0;
+
+        input[type='text'],
+        input[type='email'] {
+            flex-grow: 1;
+            border: none;
+            background-color: rgba(var(--lightGrey), 1);
+            border-radius: 25px;
+            padding: .25rem .75rem;
+            margin-right: .75rem;
+            @extend p;
+            border: 1px solid transparent;
+            transition: $timing var(--easing);
+
+            &:hover {
+                background-color: rgba(var(--midGrey), 1);
+            }
+
+            &:focus {
+                border-color: rgba(var(--grey), 1);
+                outline: none;
+            }
+
+            &:disabled {
+                opacity: .3;
+            }
+        }
+
+        .wpcf7 {
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            display: none;
+        }
+
+        input[type="button"] {
+            --backgroundColor: rgba(var(--grey), 1);
+            border: none;
+            background-color: var(--backgroundColor);
+            mask-image: url(../img/send.svg);
+            width: 22px;
+            mask-size: 22px;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            transition: $timing var(--easing);
+        }
+
+        .next-button:focus-within input[type="button"] {
+            --backgroundColor: rgba(var(--midContactColor), 1) !important;
+        }
+    }
+
+
+    .wpcf7-form {
+        width: 100%;
+        display: flex;
+
+
+        >p {
+            display: flex;
+            flex-grow: 1;
+            margin: 0;
+            display: none;
+        }
+
+        .next-button {
+            display: flex;
+            flex-grow: 0;
+        }
+
+        .wpcf7-form-control-wrap {
+            display: flex;
+            flex-grow: 1;
+        }
+
+    }
 }
 
-.disabled .wpcf7 p:last-of-type {
-    pointer-events: none;
+.modal-window {
+    width: 95%;
+    text-align: center;
+    background-color: rgba(var(--windowBackgroundColor), 1);
+    border: rgba(var(--midGrey), 1) 1px solid;
+    border-radius: 3px;
+    align-self: center;
+    margin-top: 1rem;
+    animation: messageReceive 0.6s var(--easing);
+    transition: opacity 1s var(--easing);
 }
 
-.wpcf7-form-control {
-    width: 100%;
-    transition: $timing var(--easing);
-    border: none;
-    @extend %body;
-    border-radius: 0 !important;
-    border-bottom: 1px solid rgba(var(--midGrey), 1);
-    padding: .5rem 0 .25rem 0;
-    background: transparent;
-
-    &:hover {
-        border-color: rgba(var(--grey), 1);
-        outline: none;
-    }
-
-    &:focus {
-        border-bottom: 1px solid rgba(var(--mainTextColor), 1);
-        outline: none;
-    }
-
-
-}
-
-
-.wpcf7-submit {
-    @extend .button;
-    background-color: rgba(var(--contactColor), 1);
-    width: 10rem;
-    font-size: 0;
+.modal-header {
+    padding: .75rem;
     position: relative;
-    border-radius: 0 !important;
+    border-bottom: rgba(var(--midGrey), 1) 1px solid;
 
-    &:focus {
-        background-color: rgba(var(--midContactColor), 1);
+    h2 {
+        @extend %h2;
     }
-
 }
 
-form label {
-    @extend %small-text;
-    @extend %mono;
-    color: rgba(var(--lightTextColor), 1);
-    text-transform: capitalize;
+.modal-body {
+    margin: 2rem 0;
+    padding: 0 .75rem;
 }
 
-input,
-textarea,
-span.wpcf7-not-valid-tip {
-    @extend %body;
-    padding: .5rem;
-    resize: none;
-    color: rgba(var(--mainTextColor), 1);
+.modal-buttons {
+    display: flex;
+
+    button {
+        padding: .75rem 0;
+        flex-basis: 50%;
+        @extend %mono;
+        @extend %smaller-text;
+        border: 1px solid transparent;
+        border-top-color: rgba(var(--midGrey), 1);
+
+        &.cancel {
+            border-right: 1px solid rgba(var(--midGrey), 1);
+            color: rgba(var(--lightTextColor), 1);
+
+            &:hover {
+                background-color: rgba(var(--lightMeColor), 1);
+                color: rgba(var(--meColor), 1);
+            }
+        }
+
+        &.confirm {
+            color: rgba(var(--midContactColor), 1);
+
+            &:hover {
+                background-color: rgba(var(--lightContactColor), 1);
+            }
+
+        }
+
+        &:focus {
+            border: 1px solid rgba(var(--grey), 1);
+            outline: none;
+        }
+    }
 }
 
-input:-internal-autofill-selected {
-    background-color: rgba(var(--lightGrey), 1) !important;
-    background-image: none !important;
-    color: rgba(var(--mainTextColor), 1) !important;
+
+.chat[data-state="yourName"] {
+    .wpcf7-form p:nth-of-type(1) {
+        display: flex;
+    }
 }
 
-.wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors {
-    display: none !important;
+
+.chat[data-state="yourMessage"] {
+    .wpcf7-form p:nth-of-type(2) {
+        display: flex;
+    }
 }
 
-span.wpcf7-form-control-wrap {
-    display: block;
-    position: relative;
-    margin-bottom: .5rem;
+.chat[data-state="yourEmail"] {
+    .wpcf7-form p:nth-of-type(3) {
+        display: flex;
+    }
 }
 
-span.wpcf7-not-valid-tip {
-    position: absolute;
-    display: block;
-    top: -41px;
-    right: 0;
-    padding-right: 0;
-    font-size: .7rem;
-    top: 4px;
-    @extend %mono;
-    color: rgba(var(--meColor), 1);
+.chat[data-state="confirm"] {
+    .wpcf7-form p:nth-of-type(4) {
+        display: flex;
+    }
 }
 
-p:nth-child(4) span.wpcf7-not-valid-tip {
-    top: 66px;
+[data-theme="light"] .myMessage p {
+    color: #ffffff;
 }
 
-div.wpcf7 span.ajax-loader {
+[data-theme="dark"] .myMessage p,
+[data-theme="dark"] .chat button:hover,
+[data-theme="dark"] .chat button:focus {
+    color: #cccccc;
+}
+
+
+div.wpcf7 .ajax-loader {
     display: none;
 }
 
-
-div.wpcf7-response-output {
-    font-size: 18px;
-    margin: 0;
-    padding: 1rem;
-    border: 2px solid rgba(var(--meColor), 1);
-    text-align: center;
-    width: 305px;
-    background-color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-
-@keyframes mail-sent-fadeout {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-div.wpcf7-mail-sent-ok {
-    border: 2px solid rgba(var(--resumeColor), 1);
-    background-color: rgba(var(--windowBackgroundColor), 1);
-    animation: mail-sent-fadeout 1s 2s forwards;
+.wpcf7-display-none {
+    display: none !important;
 }

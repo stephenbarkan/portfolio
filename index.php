@@ -36,4 +36,4 @@ $posts = Timber::get_posts( $args );
 // $context['posts_number'] = count($posts);
 $context['options'] = get_fields('options');
 
-Timber::render( $templates, $context, $posts_number );
+Timber::render( $templates, $context);

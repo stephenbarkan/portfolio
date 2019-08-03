@@ -83,3 +83,8 @@ ul {
     $map: (500px: 12px, 1500px: 12px);
     @include poly-fluid-sizing('font-size', $map);
 }
+
+.emoji {
+    font-size: 2em;
+    text-align: center;
+}

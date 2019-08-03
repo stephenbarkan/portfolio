@@ -22,13 +22,6 @@ html {
   line-height: 1.4;
   color: rgba(var(--mainTextColor), 1);
   scroll-behavior: smooth;
-
-  &.color-theme-in-transition *,
-  &.color-theme-in-transition *:before,
-  &.color-theme-in-transition *:after {
-    transition: color 0, background-color 0, border 0 !important;
-    transition-delay: 0 !important;
-  }
 }
 
 body {

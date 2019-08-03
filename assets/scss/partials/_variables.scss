@@ -42,8 +42,8 @@ html {
         0 3px 15px rgba(0, 0, 0, .0125);
     --easing: cubic-bezier(.25, .46, .45, .94);
 
-    [data-theme="dark"] {
-        --boxShadow: 0 15px 50px rgba(50, 50, 93, 1), 0 5px 35px rgba(0, 0, 0, 1);
+    &[data-theme="dark"] {
+        --boxShadow: 0 15px 30px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .07);
         --boxShadowSmall: 0 10px 35px rgba(50, 50, 93, .5), 0 3px 15px rgba(0, 0, 0, .5);
     }
 }

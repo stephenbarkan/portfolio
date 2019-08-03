@@ -1,11 +1,35 @@
+const LOCAL_STORAGE_THEME = "theme.mode"
+let currentTheme
+
+
+if (localStorage.getItem(LOCAL_STORAGE_THEME)) {
+    currentTheme = localStorage.getItem(LOCAL_STORAGE_THEME)
+} else {
+    currentTheme = 'light'
+}
+
+function save() {
+    localStorage.setItem(LOCAL_STORAGE_THEME, currentTheme)
+}
+document.documentElement.setAttribute('data-theme', currentTheme)
+
+
 window.onload = function () {
+    const themeSwitcher = document.getElementById('theme-switcher-input')
+
+
+    if (currentTheme === "dark") {
+        themeSwitcher.setAttribute('checked', true)
+    }
 
     const addAttribute = function () {
         document.documentElement.setAttribute('data-theme', 'dark')
         document.documentElement.classList.add('color-theme-in-transition')
         window.setTimeout(function () {
             document.documentElement.classList.remove('color-theme-in-transition')
-        }, 50)
+        }, 1000)
+        currentTheme = 'dark'
+        save()
     }
 
     const removeAttribute = function () {
@@ -14,12 +38,11 @@ window.onload = function () {
         window.setTimeout(function () {
             document.documentElement.classList.remove('color-theme-in-transition')
         }, 50)
+        currentTheme = 'light'
+        save()
     }
 
     // addAttribute()
-
-
-    const themeSwitcher = document.getElementById('theme-switcher-input')
 
     themeSwitcher.addEventListener("change", function () {
         isChecked()
@@ -32,36 +55,5 @@ window.onload = function () {
         } else {
             removeAttribute()
         }
-        console.log(document.cookie)
     }
 }
-
-// function togglePageContentLightDark() {
-//     var body = document.getElementById('body')
-//     var currentClass = body.className
-//     var newClass = body.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
-//     body.className = newClass
-
-//     document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark')
-//     console.log('Cookies are now: ' + document.cookie)
-// }
-
-
-// document.cookie = 'theme=' + themeAttr
-// console.log(document.cookie)
-
-
-// function isDarkThemeSelected() {
-//     return document.cookie.match(/theme=dark/i) != null
-//     console.log(i)
-// }
-
-// function setThemeFromCookie() {
-//     let theme = isDarkThemeSelected() ? 'dark' : 'light'
-//     document.documentElement.setAttribute('data-theme', theme)
-//     console.log(theme)
-// }
-
-// (function () {
-//     setThemeFromCookie()
-// })();

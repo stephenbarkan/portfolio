@@ -23,7 +23,7 @@ html {
 
   --contactColor: 21, 166, 248;
   --lightContactColor: 237, 246, 246;
-  --midContactColor: 7, 154, 236;
+  --midContactColor: 0, 142, 224;
 
   // --pink: #EE7FAE;
   // --medium-pink: #F1B7CF;
@@ -39,7 +39,8 @@ html[data-theme="dark"] {
   --lightTextColor: 179, 179, 179;
   --grey: 135, 135, 135;
   --lightGrey: 72, 73, 81;
-  --midGrey: 189, 189, 189;
+  --midGrey: 86, 87, 93;
+
 
   --lightMeColor: 110, 48, 43;
   --meColor: 199, 85, 70;
@@ -56,5 +57,5 @@ html[data-theme="dark"] {
 
   --contactColor: 19, 121, 180;
   --lightContactColor: 3, 64, 99;
-  --midContactColor: 23, 139, 207;
+  --midContactColor: 61, 184, 255;
 }

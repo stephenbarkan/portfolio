@@ -3,10 +3,40 @@
 {% block content %}
 <div class="window-content-wrapper">
     <div class="window-padding">
-        {% filter shortcodes %}
-        [contact-form-7 id="5" title="Contact Form"]
-        {% endfilter %}
+
+        <div class="chat-window">
+            <div class="chat" data-state="name">
+                <!-- <span></span> -->
+                <div class="messages">
+                </div>
+                <div class="chat-controls">
+                    <!-- <input type="text" placeholder="Your name">
+                    <input type="button" value=""> -->
+                    {% filter shortcodes %}
+                    [contact-form-7 id="5" title="Contact Form"]
+                    {% endfilter %}
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
+<template id="confirmModal">
+    <div class="modal-window">
+        <div class="modal-header">
+            <h2>Send Message?</h2>
+        </div>
+
+        <div class="modal-body">
+            <p>Thank you for your interest in talking with me! Do you want to send your message?</p>
+        </div>
+
+        <div class="modal-buttons">
+            <button class="cancel">Start Over</button>
+            <button class="confirm">Send Message</button>
+        </div>
+    </div>
+</template>
 
 {% endblock content %}

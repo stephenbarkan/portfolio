@@ -14,6 +14,7 @@
        data-swup-transition="next-project">
 
         <div class="work-preview-text">
+            {# <img class="work-preview-img" src="{{post.thumbnail}}" alt=""> #}
             <h3>{{post.title}}</h3>
             <ul class="work-services">
                 {% for item in post.get_field('services_provided') %}
