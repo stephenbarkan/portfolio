@@ -18,8 +18,6 @@ a:focus {
 html {
   @extend %body;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 1.4;
   color: rgba(var(--mainTextColor), 1);
   scroll-behavior: smooth;
 }
@@ -53,6 +51,10 @@ button {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+*::placeholder {
+  color: rgba(var(--lightTextColor), 1);
 }
 
 html[data-theme="dark"] {

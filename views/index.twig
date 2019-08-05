@@ -1,6 +1,13 @@
 {% extends "base.twig" %} {% block content %}
 
-
+<label class="theme-switcher">
+  <input
+         type="checkbox"
+         class="theme-switcher-input"
+         id="theme-switcher-input" />
+  <div class="theme-switcher-checkbox-ui"></div>
+  <span>color theme</span>
+</label>
 <main class="home-wrapper">
   <h1>
     <a href="#" id="me" class="headline-text-link">Stephen Barkan</a> is a designer excited about web design, branding,
@@ -26,15 +33,5 @@
 <div class="rotate-pls">Please rotate your phone!</div>
 
 <button class="close-all">Close All</button>
-
-
-<label class="theme-switcher">
-  <input
-         type="checkbox"
-         class="theme-switcher-input"
-         id="theme-switcher-input" />
-  <div class="theme-switcher-checkbox-ui"></div>
-  <span>color theme</span>
-</label>
 
 {% endblock %}

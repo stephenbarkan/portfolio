@@ -71,8 +71,7 @@
 }
 
 .instagram-heart-icon {
-    display: block;
-    height: 30px;
+    display: flex;
     cursor: pointer;
     transform: scale(1);
 
@@ -83,6 +82,7 @@
 
     & svg {
         stroke: rgba(var(--mainTextColor), 1);
+        height: 1.75rem;
 
         &.liked {
             stroke: rgba(var(--meColor), 1);

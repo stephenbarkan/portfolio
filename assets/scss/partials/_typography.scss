@@ -27,13 +27,17 @@ h1+h1 {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-
+html,
+*::placeholder {
+    $map: (500px: 16.5px, 1500px: 18px);
+    @include poly-fluid-sizing('font-size', $map);
+    line-height: 1.7;
+}
 
 p,
 ul {
-    $map: (500px: 16px, 1500px: 18px);
-    @include poly-fluid-sizing('font-size', $map);
-    line-height: 1.7;
+    // width: 100%;
+    max-width: 47ch;
 
     & a {
         color: rgba(var(--mainTextColor), 1);
@@ -86,5 +90,5 @@ ul {
 
 .emoji {
     font-size: 2em;
-    text-align: center;
+    line-height: 1;
 }

@@ -7,12 +7,13 @@
 }
 
 #resume-window {
-  max-width: 470px;
+  max-width: 23.5rem;
   height: auto;
 }
 
 #me-window {
   height: auto;
+  max-width: 20rem;
 }
 
 #contact-window {
@@ -24,8 +25,7 @@
 }
 
 #work-window {
-  max-width: 430px;
-  max-height: 456px;
+  max-width: 25rem;
 }
 
 #project-window {
@@ -35,21 +35,20 @@
 //500px and up
 @media #{$breakpoint-more-than-small} {
   #resume-window {
-    top: calc(100% - 219px - 3rem);
+    top: calc(100% - 15rem);
     left: 12%;
   }
 
   #me-window {
     top: 1rem;
     left: calc(100% - var(--width) - 6rem);
-    max-width: 370px;
   }
 
   #contact-window {
     top: 5%;
     left: calc(50% - (var(--width) / 2));
-    height: 600px;
-    max-width: 360px;
+    height: 35rem;
+    max-width: 20.5rem;
   }
 
   #work-window {
@@ -58,14 +57,14 @@
   }
 
   #about-window {
-    height: 650px;
-    max-width: 590px;
+    height: 34rem;
+    max-width: 34rem;
     top: 10%;
     left: calc(100% - var(--width) - 2rem);
   }
 
   #project-window {
-    width: calc(100vw - 1rem);
+    width: calc(100% - 1rem);
     height: calc(100% - 1rem);
     top: 0.5rem;
     left: 0.5rem;
@@ -75,7 +74,7 @@
 //1000px and up
 @media #{$breakpoint-more-than-medium} {
   #project-window {
-    width: 1210px;
+    width: 67rem;
     max-width: calc(100vw - 1rem);
     left: calc(100% - (var(--width) + 2rem));
   }

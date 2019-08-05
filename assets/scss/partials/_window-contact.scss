@@ -238,7 +238,7 @@
             border: none;
             background-color: rgba(var(--lightGrey), 1);
             border-radius: 25px;
-            padding: .25rem .75rem;
+            padding: .4em .8em;
             margin-right: .75rem;
             @extend p;
             border: 1px solid transparent;
@@ -271,8 +271,8 @@
             border: none;
             background-color: var(--backgroundColor);
             mask-image: url(../img/send.svg);
-            width: 22px;
-            mask-size: 22px;
+            width: 1.2rem;
+            mask-size: 1.2rem;
             mask-repeat: no-repeat;
             mask-position: center;
             transition: $timing var(--easing);

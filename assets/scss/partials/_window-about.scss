@@ -13,8 +13,8 @@
         background-color: rgba(var(--lightAboutColor), 1);
     }
 
-    p {
-        max-width: 500px;
+    .window-padding>* {
+        max-width: 47ch;
         margin-left: auto;
         margin-right: auto;
     }
