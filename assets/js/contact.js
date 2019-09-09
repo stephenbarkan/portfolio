@@ -15,7 +15,6 @@ let confirmBoxes = null
 let formSubmitButtons = null
 let formResetButtons = null
 
-
 const textFields = document.querySelectorAll(`.chat-controls input[type="text"]`);
 const submitButton = document.querySelector(`.chat-controls input[type="submit"]`);
 const buttonButton = document.querySelector(`.chat-controls input[type="button"]`);
@@ -199,7 +198,7 @@ const formSubmit = function () {
   addTypingBubble()
   setTimeout(function () {
     removeTypingBubble()
-    chatPush("you", `Thank you, ${userName}, I'll get back to you soon! ❤️`);
+    chatPush("you", `Thank you, ${userName}, I'll get back to you soon!`);
     showLatestMessage()
   }, 2500);
 }
@@ -233,11 +232,12 @@ let responses = [
 
 buttonButton.setAttribute("disabled", "");
 
+const nameField = form.querySelector('#yourName')
+const tooltip = form.querySelector('.messages__tooltip')
+nameField.addEventListener('click', function () {
+  tooltip.remove()
+})
 
-
-
-const workItems = document.querySelectorAll('.work-preview-wrapper')
-
-workItems.forEach(workItem => {
-  workItem.classList.add('coming-soon')
+tooltip.addEventListener('click', function () {
+  tooltip.remove()
 })

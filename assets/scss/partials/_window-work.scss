@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: $border-small;
+    border-bottom: 1px solid rgba(var(--lightGrey), 1);
     transition: $timing var(--easing);
     text-decoration: none;
     color: rgba(var(--mainTextColor), 1);
@@ -95,43 +95,27 @@
 
 .work-preview-text {
     flex: 1;
+    @include stack(.5rem);
 }
 
 .work-preview-wrapper {
-    .work-services {
-        width: 100%;
-        max-width: 405px;
-        margin: 0;
-        margin-top: .5rem;
-        @extend %smaller-text;
-        padding: 0;
-        list-style-type: none;
-        display: none;
-        text-transform: lowercase;
-        @extend %mono;
-
-        li {
-            color: rgba(var(--lightTextColor), 1);
-            display: inline-block;
-
-            &::after {
-                content: ',';
-            }
-
-            &:last-child::after {
-                content: '';
-            }
-        }
-    }
 
     h3 {
         @extend %body;
-        @extend %h2;
+        font-size: var(--type-lg);
         font-weight: 500;
-        margin: 0 0 .25rem;
         width: 100%;
-
     }
+}
+
+.work-preview__company-name {
+    @extend %mono;
+    @extend %smaller-text;
+    color: rgba(var(--lightTextColor), 1);
+}
+
+.work-preview__description {
+    display: none;
 }
 
 @media #{$breakpoint-more-than-small} {

@@ -1,0 +1,34 @@
+.single-browser__wrapper {
+    border: 1px solid rgba(var(--midGrey), 1);
+    background-color: rgba(var(--midGrey), 1);
+    padding-top: 2rem;
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.single-browser__traffic-lights {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    left: .5rem;
+    transform: translateY(-50%);
+
+    &>*+* {
+        margin-left: .35rem;
+    }
+}
+
+.single-browser__traffic-light {
+    display: block;
+    background-color: rgba(var(--windowBackgroundColor), 1);
+    border-radius: 50%;
+    height: .75rem;
+    width: .75rem;
+}
+
+.single__flexible-content>.single__intro+.section__browser {
+    @media #{$breakpoint-more-than-medium} {
+        margin-top: calc(-1 * var(--spacing);
+        }
+    }

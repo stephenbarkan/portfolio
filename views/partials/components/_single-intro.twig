@@ -1,0 +1,26 @@
+<section
+         {% if item.text_color_reversed %}
+         class="single__intro single__intro--reversed"
+         {% else %}
+         class="single__intro"
+         {% endif %}
+         style="--brand-color: {{ item.background_color }}">
+
+    <div class="single__wrapper single__wrapper--two-columns">
+        <div>
+            <div class="single__intro-intro-wrapper">
+                <h2 class="single__intro-eyebrow">{{post.company_name}}</h2>
+                <h1 class="single__intro-title">{{post.project_name}}</h1>
+                <p class="single__intro-link-wrapper">
+                    <a class="single__intro-link" href="{{post.company_website}}" target="_blank"
+                       rel="noopener">{{post.company_website}}</a>
+                </p>
+
+            </div>
+            <div class="single__intro-content">
+                <h4 class="single__project-background">Project Background</h4>
+                {{ item.content }}
+            </div>
+        </div>
+    </div>
+</section>

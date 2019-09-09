@@ -1,0 +1,60 @@
+.section__phone {
+    >.single__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media #{$breakpoint-more-than-small} {
+
+        &:not(last-of-type)>.single__wrapper {
+            justify-content: flex-start;
+            padding-left: 5%;
+        }
+
+        &+& {
+            margin-top: -40%;
+        }
+
+        &:nth-of-type(2n) {
+            >.single__wrapper {
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 5%;
+            }
+        }
+    }
+}
+
+.single-phone__wrapper {
+    border: 1px solid rgba(var(--midGrey), 1);
+    background-color: rgba(var(--midGrey), 1);
+    padding: 3rem 0 3.5rem;
+    border-radius: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    max-width: 18rem;
+}
+
+.single-phone__button {
+    display: flex;
+    position: absolute;
+    bottom: 1.75rem;
+    left: 50%;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 47%;
+    background-color: rgba(var(--windowBackgroundColor), 1);
+    transform: translate(-50%, 50%);
+}
+
+.single-phone__speaker {
+    display: flex;
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    height: .35rem;
+    width: 3rem;
+    border-radius: .7rem;
+    background-color: rgba(var(--windowBackgroundColor), 1);
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,54 @@
+<section class="single__outro">
+
+    {% if post.timeline %}
+    <div class="single__wrapper single__wrapper--two-columns">
+        <div>
+            <div class="single__outro-heading-wrapper">
+                <h3 class="single__outro-heading">Timeline</h3>
+            </div>
+            <div class="single__outro-content">
+                <ul class="single__outro-list">
+                    <li class="single__outro-list-item">{{ post.timeline }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if post.services_provided %}
+    <div class="single__wrapper single__wrapper--two-columns">
+        <div>
+            <div class="single__outro-heading-wrapper">
+                <h3 class="single__outro-heading">What I Contributed</h3>
+            </div>
+            <div class="single__outro-content">
+                <ul class="single__outro-list">
+                    {% for item in post.meta('services_provided') %}
+                    <li class="single__outro-list-item">{{ item.service }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if post.credits %}
+    <div class="single__wrapper single__wrapper--two-columns">
+        <div>
+            <div class="single__outro-heading-wrapper">
+                <h3 class="single__outro-heading">Who Else Contributed</h3>
+            </div>
+            <div class="single__outro-content">
+                <ul class="single__outro-list">
+
+                    {% for item in post.meta('credits') %}
+                    <li class="single__outro-list-item">
+                        <span class="single__outro-list-item-name">{{ item.collaborator.name }}
+                        </span>{{ item.collaborator.role }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</section>

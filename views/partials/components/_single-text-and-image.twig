@@ -1,0 +1,16 @@
+<div class="single__wrapper single__wrapper--two-columns">
+    <div
+         {% if item.image_on_left %}
+         class="single__text-and-image--swap"
+         {% endif %}>
+        <div class="single__text-and-image-text-wrapper">
+            {{item.paragraph}}
+        </div>
+        <div class="single__text-and-image-image-wrapper">
+            {% for image in item.images %}
+            <img src="{{ Image(image) }}" />
+            {% endfor %}
+        </div>
+    </div>
+
+</div>

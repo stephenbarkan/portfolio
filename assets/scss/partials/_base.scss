@@ -11,9 +11,9 @@
   color: rgba(var(--mainBackgroundColor), 1);
 }
 
-a:focus {
-  outline: none;
-}
+// a:focus {
+//   outline: none;
+// }
 
 html {
   @extend %body;
@@ -42,19 +42,17 @@ body {
   }
 }
 
-button {
-  border: none;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
 *::placeholder {
   color: rgba(var(--lightTextColor), 1);
+  font-size: var(--type-default);
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 html[data-theme="dark"] {

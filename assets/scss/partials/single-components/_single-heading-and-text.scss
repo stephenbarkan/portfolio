@@ -1,0 +1,25 @@
+.single__heading-and-text-heading-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.single__heading-and-text-heading {
+    @extend %clearface;
+    font-size: var(--type-xxxl);
+
+    @media #{$breakpoint-more-than-small} {
+        max-width: 11ch;
+    }
+}
+
+.single__heading-and-text-text {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--type-md);
+
+    >ul {
+        margin-top: 0;
+        margin-bottom: 0;
+        @include stack;
+    }
+}

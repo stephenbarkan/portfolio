@@ -13,12 +13,14 @@
 
   h1 {
     max-width: calc((14.5 * 1em));
-    @extend %h1;
+    font-size: var(--type-xxxl);
+    white-space: normal;
   }
 
   nav {
-    @extend %h1;
+    font-size: var(--type-xxxl);
     margin-top: 0.6em;
+    white-space: normal;
   }
 }
 
@@ -148,7 +150,7 @@
   display: none;
   background-color: rgba(var(--mainTextColor), 1);
   color: rgba(var(--mainBackgroundColor), 1);
-  @extend %h1;
+  font-size: var(--type-xxxl);
   @extend %clearface;
   position: fixed;
   top: 0;

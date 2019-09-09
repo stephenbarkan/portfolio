@@ -1,0 +1,70 @@
+.single__intro {
+    background-color: var(--brand-color);
+    padding: var(--spacing) .75rem;
+    color: #000;
+
+    @media #{$breakpoint-more-than-medium} {
+        padding-top: var(--spacing);
+        padding-bottom: calc(1.75 * var(--spacing));
+    }
+
+    a {
+        color: #000;
+
+        &:hover,
+        &:focus {
+            color: rgba(0, 0, 0, .5);
+        }
+    }
+}
+
+.single__intro--reversed {
+    color: #fff;
+
+    a {
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            color: rgba(255, 255, 255, .5);
+        }
+    }
+}
+
+html[data-theme="dark"] {
+    .single__intro {
+        opacity: .85;
+    }
+}
+
+
+.single__intro-intro-wrapper {
+    @include stack;
+}
+
+.single__intro-eyebrow {
+    @extend %mono;
+    @extend %small-text;
+}
+
+.single__intro-title {
+    font-size: var(--type-xxxl);
+}
+
+.single__intro-link {
+    @extend %body;
+    font-size: var(--type-lg);
+}
+
+.single__intro-headline {
+    font-size: var(--type-xxl);
+}
+
+.single__intro-content {
+    @include stack;
+}
+
+.single__project-background {
+    @extend %body;
+    font-weight: 500;
+}

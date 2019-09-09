@@ -3,10 +3,11 @@ html {
   --windowBackgroundColor: 255, 255, 255;
 
   --mainTextColor: 0, 0, 0;
-  --lightTextColor: 135, 135, 135;
+  --lightTextColor: 117, 117, 117;
   --grey: 189, 189, 189;
-  --lightGrey: 239, 239, 239;
   --midGrey: 231, 231, 231;
+  --lightGrey: 239, 239, 239;
+
 
   --aboutColor: 255, 173, 14;
   --lightAboutColor: 255, 245, 221;
@@ -24,6 +25,7 @@ html {
   --contactColor: 21, 166, 248;
   --lightContactColor: 237, 246, 246;
   --midContactColor: 0, 142, 224;
+  --darkContactColor: 4, 86, 144;
 
   // --pink: #EE7FAE;
   // --medium-pink: #F1B7CF;
@@ -58,4 +60,5 @@ html[data-theme="dark"] {
   --contactColor: 19, 121, 180;
   --lightContactColor: 3, 64, 99;
   --midContactColor: 61, 184, 255;
+  --darkContactColor: 181, 207, 227;
 }

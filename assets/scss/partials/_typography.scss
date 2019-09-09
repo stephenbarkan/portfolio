@@ -15,10 +15,6 @@ h5,
 h6,
 p {
     margin: 0;
-
-    &+& {
-        margin-top: 1rem;
-    }
 }
 
 h1+h1 {
@@ -27,10 +23,8 @@ h1+h1 {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-html,
-*::placeholder {
-    $map: (500px: 16.5px, 1500px: 18px);
-    @include poly-fluid-sizing('font-size', $map);
+html {
+    font-size: var(--type-default);
     line-height: 1.7;
 }
 
@@ -45,33 +39,11 @@ ul {
 
         &:hover,
         &:focus {
-            color: rgba(var(--lightTextColor), 1);
+            color: rgba(var(--mainTextColor), .5);
         }
     }
 }
 
-
-%h1 {
-    $map: (500px: 34px, 1500px: 64px, 2400px: 70px);
-    @include poly-fluid-sizing('font-size', $map);
-    white-space: normal;
-}
-
-%h2 {
-    $map: (500px: 20px, 1500px: 23px);
-    @include poly-fluid-sizing('font-size', $map);
-}
-
-%h3 {
-    $map: (500px: 18px, 1500px: 20px);
-    @include poly-fluid-sizing('font-size', $map);
-}
-
-
-%h4 {
-    $map: (500px: 25px, 1500px: 40px);
-    @include poly-fluid-sizing('font-size', $map);
-}
 
 %small-text {
     $map: (500px: 15px, 1500px: 17px);
@@ -91,4 +63,24 @@ ul {
 .emoji {
     font-size: 2em;
     line-height: 1;
+}
+
+:root {
+    $map: (500px: 16.5px, 1500px: 18px);
+    @include poly-fluid-sizing('--type-default', $map);
+
+    $map: (500px: 18px, 1500px: 21px);
+    @include poly-fluid-sizing('--type-md', $map);
+
+    $map: (500px: 20px, 1500px: 23px);
+    @include poly-fluid-sizing('--type-lg', $map);
+
+    $map: (500px: 24px, 1500px: 40px);
+    @include poly-fluid-sizing('--type-xl', $map);
+
+    $map: (500px: 30px, 1500px: 56px);
+    @include poly-fluid-sizing('--type-xxl', $map);
+
+    $map: (500px: 34px, 1500px: 64px, 2400px: 70px);
+    @include poly-fluid-sizing('--type-xxxl', $map);
 }

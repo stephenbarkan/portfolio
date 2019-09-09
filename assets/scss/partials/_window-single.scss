@@ -1,0 +1,62 @@
+#project-window {
+
+    & .window-top-bar {
+        background-color: rgba(var(--grey), 1);
+    }
+
+    & .window-header,
+    & .window-bottom-bar {
+        background-color: rgba(var(--lightGrey), 1);
+    }
+
+    & .window-padding {
+        display: block;
+        position: relative;
+        padding: 0;
+    }
+
+    & .window-title {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend %clearface;
+    font-size: var(--type-lg);
+    background-color: rgba(var(--windowBackgroundColor), 1);
+
+    span {
+        opacity: 0;
+        animation: loading-fade-in .7s 1s both;
+
+        @keyframes loading-fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+}

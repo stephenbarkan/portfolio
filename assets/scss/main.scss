@@ -4,20 +4,31 @@
 @import "partials/base.scss";
 @import "partials/variables";
 @import "partials/fluid-typography.scss";
-@import "partials/rfs.scss";
 @import "partials/fonts";
 @import "partials/typography";
+@import "partials/mixins";
+
+@import "partials/button";
 
 @import "partials/home";
-@import "partials/single";
 @import "partials/theme";
 
 @import "partials/window-base.scss";
-@import "partials/windows";
+@import "partials/window-sizing";
 @import "partials/window-me";
 @import "partials/window-resume";
 @import "partials/window-contact";
 @import "partials/contact-form";
 @import "partials/window-about";
 @import "partials/window-work";
-@import "partials/window-project";
+
+@import "partials/window-single";
+@import "partials/single-components/single-header";
+@import "partials/single-components/single-intro";
+@import "partials/single-components/single-outro";
+@import "partials/single-components/single-flexible-content";
+@import "partials/single-components/single-browser";
+@import "partials/single-components/single-phone";
+@import "partials/single-components/single-centered-paragraph";
+@import "partials/single-components/single-text-and-image";
+@import "partials/single-components/single-heading-and-text";

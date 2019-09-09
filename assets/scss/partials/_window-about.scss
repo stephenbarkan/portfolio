@@ -19,3 +19,7 @@
         margin-right: auto;
     }
 }
+
+.about-window__wrapper {
+    @include stack;
+}

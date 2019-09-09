@@ -1,0 +1,12 @@
+<div class="single__wrapper">
+    <div class="single-phone__wrapper">
+        <div class="single-phone__speaker"></div>
+        {% if item.type == "video" %}
+        <video autoplay muted playsinline loop src="{{ item.media }}" />
+        {% elseif item.type == "image" %}
+        <img src="{{ item.media }}" alt="">
+        {% endif %}
+        <span class="single-phone__button">
+        </span>
+    </div>
+</div>

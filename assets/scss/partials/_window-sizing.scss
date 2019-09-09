@@ -35,7 +35,7 @@
 //500px and up
 @media #{$breakpoint-more-than-small} {
   #resume-window {
-    top: calc(100% - 15rem);
+    top: calc(100% - 13rem);
     left: 12%;
   }
 
@@ -53,14 +53,14 @@
 
   #work-window {
     top: 15%;
-    left: 3%;
+    left: 8%;
   }
 
   #about-window {
-    height: 34rem;
+    height: 28rem;
     max-width: 34rem;
-    top: 10%;
-    left: calc(100% - var(--width) - 2rem);
+    top: 15%;
+    left: calc(100% - var(--width) - 0rem);
   }
 
   #project-window {

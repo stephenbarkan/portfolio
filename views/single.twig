@@ -1,35 +1,105 @@
-<header class="single-meta">
-
-    {% if post.done_via %}
-    <div class="single-via">
-        <h6>Timeline</h6>
-        <p>{{post.done_via}}</p>
+{# <header class="single__meta">
+    {% if post.timeline %}
+    <div class="single__meta-timeline">
+        <h6 class="single__meta-title">Timeline</h6>
+        <p class="single__meta-content">{{ post.timeline }}</p>
     </div>
     {% endif %}
 
-
-    <div class="single-services">
-        <h6>Services</h6>
-        <p>
+    <div class="single__meta-contributions">
+        <h6 class="single__meta-title">Contributions</h6>
+        <ul class="single__meta-content">
             {% for item in post.get_field('services_provided') %}
-            <span>{{ item.service }}</span>
+            <li class="single__meta-contribution">{{ item.service }}</li>
             {% endfor %}
-
-        </p>
+        </ul>
     </div>
 
     {% if post.company_website %}
-    <div class="single-link">
-        <h6>Link</h6>
-        <p><a target="_blank"
-               href="{{post.company_website}}">{{post.company_website}}</a></p>
+    <div class="single__meta-link">
+        <h6 class="single__meta-title">Link</h6>
+        <p class="single__meta-content">
+            <a target="_blank" href="{{ post.company_website }}">{{
+        post.company_website
+      }}</a>
+        </p>
     </div>
     {% endif %}
+</header> #}
+{# <section>
+    <div class="single__wrapper single__header">
+        <h2 class="single__header-eyebrow">{{post.company_name}}</h2>
+        <h1 class="single__header-title">{{post.title}}</h1>
+        <p class="single__header-link-wrapper">
+            <a class="single__header-link" href="{{post.company_website}}" target="_blank"
+               rel="noopener">{{post.company_website}}</a>
+        </p>
+    </div>
+</section> #}
 
-</header>
-
-<div id="single-scroll-target" class="single-content">{{ post.content }}</div>
-
+<article class="single__flexible-content">
+    {% for item in post.meta('flexible_content') %}
 
 
-{# {% endblock %} #}
+    {# BROWSER #}
+    {% if item.acf_fc_layout == 'browser_mockup' %}
+    <section class="section__browser">
+        {% include "partials/components/_single-browser.twig" %}
+    </section>
+
+
+    {# CELL PHONE #}
+    {% elseif item.acf_fc_layout == 'phone_mockup' %}
+    <section class="section__phone">
+        {% include "partials/components/_single-phone.twig" %}
+    </section>
+
+
+    {# TEXT AND IMAGE #}
+    {% elseif item.acf_fc_layout == 'text_and_image' %}
+    <section class="section__text-and-image">
+        {% include "partials/components/_single-text-and-image.twig" %}
+    </section>
+
+
+    {# HEADING AND TEXT #}
+    {% elseif item.acf_fc_layout == 'heading_and_text' %}
+    <section class="section__heading-and-text">
+        {% include "partials/components/_single-heading-and-text.twig" %}
+    </section>
+
+
+    {# IMAGE #}
+    {% elseif item.acf_fc_layout == 'image' %}
+    <section class="section__image">
+
+        <div
+             {% if item.full_width != true %}
+             class="single__wrapper"
+             {% endif %}>
+            <img src="{{ item.image }}" alt="">
+        </div>
+    </section>
+
+
+    {# CENTERED PARAGRAPH #}
+    {% elseif item.acf_fc_layout == 'centered_paragraph' %}
+    <section class="section__centered-paragraph">
+        <div class="single__wrapper">
+            <p class="single__centered-text">{{item.text}}</p>
+        </div>
+    </section>
+
+
+    {# INTRO SECTION #}
+    {% elseif item.acf_fc_layout == 'intro_section' %}
+    {% include "partials/components/_single-intro.twig" %}
+
+
+    {# OUTRO SECTION #}
+    {% elseif item.acf_fc_layout == 'outro_section' %}
+    {% include "partials/components/_single-outro.twig" %}
+
+    {% endif %}
+    {% endfor %}
+</article>

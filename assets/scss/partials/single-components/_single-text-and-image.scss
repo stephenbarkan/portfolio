@@ -1,0 +1,18 @@
+.single__text-and-image-text-wrapper {
+    @include stack;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: var(--type-md);
+}
+
+.single__text-and-image-image-wrapper {
+    @include stack;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.single__text-and-image--swap {
+    flex-direction: row-reverse;
+}

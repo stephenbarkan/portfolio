@@ -14,7 +14,7 @@ const windowFunctions = function () {
             $(this).removeClass('animating')
         });
         if ($('.instagram-heart-icon svg').hasClass('liked')) {
-            $('.instagram-heart-amount').text('1 Like')
+            $('.instagram-heart-amount').text('1 Like!')
         } else($('.instagram-heart-amount').text('0 Likes'))
     }
 
@@ -40,6 +40,7 @@ const windowFunctions = function () {
         $(selector).removeClass('disabled')
         windowZ = windowZ + 1
         $(selector).css('z-index', windowZ)
+        // $('.traffic-lights').focus()
         closeAll()
     }
 
@@ -58,6 +59,7 @@ const windowFunctions = function () {
 
     $('#contact').click(function (e) {
         windowOpen(e, '#contact-window')
+        $('.messages__tooltip').addClass('window-open')
     })
 
     $('#about').click(function (e) {
@@ -129,7 +131,7 @@ let losAnimated = null
 
 $(document).ajaxComplete(function () {
 
-    losAnimated = document.querySelectorAll('.single-content > *')
+    losAnimated = document.querySelectorAll('.single-content > .animated')
     fadeIn()
     windowWidth(`#project-window`)
     losAnimated.forEach(elTag => {

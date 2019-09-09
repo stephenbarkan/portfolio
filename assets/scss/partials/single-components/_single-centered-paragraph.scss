@@ -1,0 +1,9 @@
+.single__centered-text {
+    max-width: 40ch;
+    font-size: var(--type-xl);
+    @extend %clearface;
+    line-height: 1.4;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

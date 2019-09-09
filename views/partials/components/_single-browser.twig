@@ -1,0 +1,14 @@
+<div class="single__wrapper">
+    <div class="single-browser__wrapper">
+        <span class="single-browser__traffic-lights">
+            <span class="single-browser__traffic-light"></span>
+            <span class="single-browser__traffic-light"></span>
+            <span class="single-browser__traffic-light"></span>
+        </span>
+        {% if item.type == "video" %}
+        <video autoplay muted playsinline loop src="{{ item.media }}" />
+        {% elseif item.type == "image" %}
+        <img src="{{ item.media }}" alt="">
+        {% endif %}
+    </div>
+</div>

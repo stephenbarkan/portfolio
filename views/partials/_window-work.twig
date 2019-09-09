@@ -5,22 +5,17 @@
 
     {% for post in posts %}
     <a href="{{post.link}}" data-title="{{post.title}}"
-       style="--brand-color: {{post.brand_color}}; --coming-soon-text: '{{post.coming_soon_text | default("coming soon")}}'"
+       style="--coming-soon-text: '{{post.coming_soon_text | default("coming soon")}}'"
        {% if post.coming_soon %}
        class="work-preview-wrapper coming-soon" tabindex="-1"
        {% else %}
        class="work-preview-wrapper"
-       {% endif %}
-       data-swup-transition="next-project">
+       {% endif %}>
 
         <div class="work-preview-text">
             {# <img class="work-preview-img" src="{{post.thumbnail}}" alt=""> #}
-            <h3>{{post.title}}</h3>
-            <ul class="work-services">
-                {% for item in post.get_field('services_provided') %}
-                <li>{{ item.service }}</li>
-                {% endfor %}
-            </ul>
+            <h3 class="work-preview__project-title">{{post.project_name}}</h3>
+            <p class="work-preview__company-name">for {{post.company_name}}</p>
         </div>
         <div class="work-preview-arrow"> </div>
     </a>
